@@ -16,7 +16,7 @@ export const Bio = {
     "I am a motivated and versatile individual, always eager to take on new challenges. With a passion for learning I am dedicated to delivering high-quality results. With a positive attitude and a growth mindset, I am ready to make a meaningful contribution and achieve great things.",
   github: "https://github.com/AhlaanMI",
   resume:
-    "https://drive.google.com/file/d/1WEedQL8eSNPFtMons-VLVp3UEFF0Zqap/view?usp=drive_link",
+    "https://drive.google.com/file/d/1Y4J6Ca0bm3s90Nda6b13t3si7Mkvi1uJ/view?usp=drive_link",
   linkedin: "https://linkedin.com/in/ahlaan",
   twitter: "https://x.com/ahlxvn",
   insta: "https://www.instagram.com/ahlxvn/",
@@ -33,9 +33,9 @@ export const skills = [
           "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9Ii0xMS41IC0xMC4yMzE3NCAyMyAyMC40NjM0OCI+CiAgPHRpdGxlPlJlYWN0IExvZ288L3RpdGxlPgogIDxjaXJjbGUgY3g9IjAiIGN5PSIwIiByPSIyLjA1IiBmaWxsPSIjNjFkYWZiIi8+CiAgPGcgc3Ryb2tlPSIjNjFkYWZiIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiPgogICAgPGVsbGlwc2Ugcng9IjExIiByeT0iNC4yIi8+CiAgICA8ZWxsaXBzZSByeD0iMTEiIHJ5PSI0LjIiIHRyYW5zZm9ybT0icm90YXRlKDYwKSIvPgogICAgPGVsbGlwc2Ugcng9IjExIiByeT0iNC4yIiB0cmFuc2Zvcm09InJvdGF0ZSgxMjApIi8+CiAgPC9nPgo8L3N2Zz4K",
       },
       {
-        name: "Redux",
+        name: "Tailwind CSS",
         image:
-          "https://d33wubrfki0l68.cloudfront.net/0834d0215db51e91525a25acf97433051f280f2f/c30f5/img/redux.svg",
+          "https://tailwindcss.com/_next/static/media/tailwindcss-mark.d52e9897.svg",
       },
       {
         name: "Next Js",
@@ -142,7 +142,7 @@ export const skills = [
       {
         name: "Git",
         image:
-          "https://camo.githubusercontent.com/fbfcb9e3dc648adc93bef37c718db16c52f617ad055a26de6dc3c21865c3321d/68747470733a2f2f7777772e766563746f726c6f676f2e7a6f6e652f6c6f676f732f6769742d73636d2f6769742d73636d2d69636f6e2e737667",
+          "https://git-scm.com/images/logo@2x.png",
       },
       {
         name: "GitHub",
@@ -167,17 +167,17 @@ export const skills = [
       {
         name: "Postman",
         image:
-          "https://camo.githubusercontent.com/93b32389bf746009ca2370de7fe06c3b5146f4c99d99df65994f9ced0ba41685/68747470733a2f2f7777772e766563746f726c6f676f2e7a6f6e652f6c6f676f732f676574706f73746d616e2f676574706f73746d616e2d69636f6e2e737667",
+          "https://voyager.postman.com/logo/postman-logo-icon-orange.svg",
       },
       {
         name: "Adobe XD",
         image:
-          "https://camo.githubusercontent.com/c205ecbe12500177d102169d97bc1c17c545155fdf5ec78c08d54ac53e5b38c1/68747470733a2f2f63646e2e776f726c64766563746f726c6f676f2e636f6d2f6c6f676f732f61646f62652d78642e737667",
+          "https://www.adobe.com/content/dam/cc/icons/adobe_wordmark_red.svg",
       },
       {
         name: "Figma",
         image:
-          "https://camo.githubusercontent.com/ed93c2b000a76ceaad1503e7eb9356591b885227e82a36a005b9d3498b303ba5/68747470733a2f2f7777772e766563746f726c6f676f2e7a6f6e652f6c6f676f732f6669676d612f6669676d612d69636f6e2e737667",
+          "http://www.w3.org/2000/svg",
       },
     ],
   },
@@ -187,16 +187,16 @@ export const experiences = [
   {
     id: 0,
     img: fliprImage,
-    role: "Frontend Developer Intern",
+    role: "Software Engineer Intern",
     company: "Gamage Recruiters",
     date: "Aug 2024 - Present",
-    desc: "Working on the frontend of the web application using ReactJS.",
+    desc: "Proficient in modern technologies, including React.js for developing dynamic and responsive user interfaces, Node.js for efficient server-side development, and MySQL for robust database management. Skilled in implementing comprehensive software testing practices to ensure high-quality, reliable applications.",
     skills: [
       "ReactJS",
-      "Redux",
+      "Tailwind CSS",
       "NodeJs",
-      " Next Js",
-      "MongoDB",
+      "Next Js",
+      "SQL",
       "Express",
       "Material UI",
       "HTML",
