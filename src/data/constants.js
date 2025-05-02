@@ -1,22 +1,18 @@
-import fliprImage from '../images/Logo.PNG';
-import scl from '../images/scl.jpg'
-import sliit from '../images/sliit_logo.jpg'
-import rms from '../images/rms.jpeg'
-import ora from '../images/ora.jpg'
-import chatbot from '../images/chatbot.png'
+import fliprImage from "../images/Logo.PNG";
+import scl from "../images/scl.jpg";
+import sliit from "../images/sliit_logo.jpg";
+import rms from "../images/rms.jpeg";
+import ora from "../images/ora.jpg";
+import chatbot from "../images/chatbot.png";
 
 export const Bio = {
   name: "Ahlaan Imamdeen",
-  roles: [
-    "Full Stack Developer",
-    "Android Developer",
-    "Programmer",
-  ],
+  roles: ["Full Stack Developer", "Android Developer", "Programmer"],
   description:
     "I am a motivated and versatile individual, always eager to take on new challenges. With a passion for learning I am dedicated to delivering high-quality results. With a positive attitude and a growth mindset, I am ready to make a meaningful contribution and achieve great things.",
   github: "https://github.com/AhlaanMI",
   resume:
-    "https://drive.google.com/file/d/1Y4J6Ca0bm3s90Nda6b13t3si7Mkvi1uJ/view?usp=drive_link",
+    "https://drive.google.com/file/d/1HK3JpB_NNAgnUzoZfnqffSU7VtbwVjra/view?usp=drive_link",
   linkedin: "https://linkedin.com/in/ahlaan",
   twitter: "https://x.com/ahlxvn",
   insta: "https://www.instagram.com/ahlxvn/",
@@ -99,7 +95,7 @@ export const skills = [
         image:
           "https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original-wordmark.svg",
       },
-      
+
       {
         name: "MongoDB",
         image:
@@ -141,8 +137,7 @@ export const skills = [
     skills: [
       {
         name: "Git",
-        image:
-          "https://git-scm.com/images/logo@2x.png",
+        image: "https://git-scm.com/images/logo@2x.png",
       },
       {
         name: "GitHub",
@@ -166,8 +161,7 @@ export const skills = [
       },
       {
         name: "Postman",
-        image:
-          "https://voyager.postman.com/logo/postman-logo-icon-orange.svg",
+        image: "https://voyager.postman.com/logo/postman-logo-icon-orange.svg",
       },
       {
         name: "Adobe XD",
@@ -176,8 +170,7 @@ export const skills = [
       },
       {
         name: "Figma",
-        image:
-          "http://www.w3.org/2000/svg",
+        image: "http://www.w3.org/2000/svg",
       },
     ],
   },
@@ -203,9 +196,7 @@ export const experiences = [
       "CSS",
       "JavaScript",
     ],
-
   },
-  
 ];
 
 export const education = [
@@ -215,7 +206,8 @@ export const education = [
     school: "Sri Lanka Institute of Information Technology",
     date: "2021 - 2025",
     desc: " am currently pursuing a Bachelor's degree in Information Technology (B.Sc. Hons) at the Sri Lanka Institute of Information Technology (SLIIT). I have completed 6 semesters and am in Year 4, Semester 1. I have a strong foundation in SQL, Java, and MERN technologies, along with expertise in Object-Oriented Programming.",
-    degree: "B.Sc.(Hons) in Information Technology Specialization - Information Technology",
+    degree:
+      "B.Sc.(Hons) in Information Technology Specialization - Information Technology",
   },
   {
     id: 1,
@@ -225,7 +217,6 @@ export const education = [
     desc: "I completed my Advanced Level education at Baduriya College, Mawanella, in the Physical Science stream, achieving a C in Physics and S grades in Combined Maths and Chemistry.",
     degree: " Advanced Level - Physical Science ",
   },
-  
 ];
 
 export const projects = [
@@ -237,17 +228,10 @@ export const projects = [
       "Developed a social media platform allowing users to create profiles, post updates, and interact with other users. Built with React for the frontend and Firebase for backend services, including user authentication, realtime database, and storage",
     image:
       "https://private-user-images.githubusercontent.com/99312306/331869501-9191d723-1373-4d47-abdc-e5242cbc65f3.PNG?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MjYwNDA4NDYsIm5iZiI6MTcyNjA0MDU0NiwicGF0aCI6Ii85OTMxMjMwNi8zMzE4Njk1MDEtOTE5MWQ3MjMtMTM3My00ZDQ3LWFiZGMtZTUyNDJjYmM2NWYzLlBORz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDA5MTElMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQwOTExVDA3NDIyNlomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTQ3MGM1Zjk3OTI5YzFhNDU2Y2ZiNjkzYjYxODMzM2EzOWZkZDEzNzYwMjM1NTE1NjljMjEzYTlmYjIxZmY5YzQmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.tGssn-2LlDGk9sz0lTGir_GQ_NhoXO6kIoV3D69Two4",
-    tags: [
-      "React Js",
-      "Firebase",
-      "Node Js",
-      "Express Js",
-      "Redux",
-      "AWS",
-    ],
+    tags: ["React Js", "Firebase", "Node Js", "Express Js", "Redux", "AWS"],
     category: "web app",
     github: "https://github.com/IjaasMohamed/ITMP-/tree/main/Organization",
- 
+
     member: [
       {
         name: "Ahlan Imamdeen",
@@ -320,12 +304,7 @@ export const projects = [
     description:
       "Developed a web application for managing restaurant operations, including menu management, order processing, and reservations. Built with React for the frontend and Nodejs with Express for backend services, using MongoDB for database management.",
     image: rms,
-    tags: [
-      "React Js",
-      "MongoDb",
-      "Node Js",
-      "Express Js",
-    ],
+    tags: ["React Js", "MongoDb", "Node Js", "Express Js"],
     category: "web app",
     github: "https://github.com/AchinthaDavidson/Restaurant-Management-System",
   },
@@ -359,7 +338,6 @@ export const projects = [
         linkedin: "https://www.linkedin.com/in/nafeel-s-m-a92348270/",
         github: "https://github.com/NafeelSM",
       },
-      
     ],
   },
   {
