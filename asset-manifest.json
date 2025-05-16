@@ -1,20 +1,22 @@
 {
   "files": {
     "main.css": "/My-Portfolio/static/css/main.bf538fe7.css",
-    "main.js": "/My-Portfolio/static/js/main.2e257115.js",
+    "main.js": "/My-Portfolio/static/js/main.d2cfa72d.js",
     "static/media/HeroImage.jpg": "/My-Portfolio/static/media/HeroImage.8a91f4a284567d4f918c.jpg",
+    "static/media/Screenshot (78).png": "/My-Portfolio/static/media/Screenshot (78).f60865edd41eb5d3b14f.png",
     "static/media/ora.jpg": "/My-Portfolio/static/media/ora.1472606904ff448a913a.jpg",
     "static/media/chatbot.png": "/My-Portfolio/static/media/chatbot.01682024f855cbc8539e.png",
+    "static/media/Screenshot (79).png": "/My-Portfolio/static/media/Screenshot (79).5cd56588d9553286c0bf.png",
     "static/media/Logo.PNG": "/My-Portfolio/static/media/Logo.76680476521be93f82cc.PNG",
     "static/media/rms.jpeg": "/My-Portfolio/static/media/rms.b7f5dd69134054dcbe0b.jpeg",
     "static/media/scl.jpg": "/My-Portfolio/static/media/scl.64ccdab4f4186e858f48.jpg",
     "static/media/sliit_logo.jpg": "/My-Portfolio/static/media/sliit_logo.0c5f048df01c71b00bdc.jpg",
     "index.html": "/My-Portfolio/index.html",
     "main.bf538fe7.css.map": "/My-Portfolio/static/css/main.bf538fe7.css.map",
-    "main.2e257115.js.map": "/My-Portfolio/static/js/main.2e257115.js.map"
+    "main.d2cfa72d.js.map": "/My-Portfolio/static/js/main.d2cfa72d.js.map"
   },
   "entrypoints": [
     "static/css/main.bf538fe7.css",
-    "static/js/main.2e257115.js"
+    "static/js/main.d2cfa72d.js"
   ]
 }
