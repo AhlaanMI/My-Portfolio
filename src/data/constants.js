@@ -4,10 +4,19 @@ import sliit from "../images/sliit_logo.jpg";
 import rms from "../images/rms.jpeg";
 import ora from "../images/ora.jpg";
 import chatbot from "../images/chatbot.png";
+import movie from "../images/Screenshot (78).png";
+import cogen from "../images/Screenshot (79).png";
 
 export const Bio = {
   name: "Ahlaan Imamdeen",
-  roles: ["Full Stack Developer", "Android Developer", "Programmer"],
+  roles: [
+    "Software Engineer",
+    "Web Developer",
+    "React Developer",
+    "Backend Developer",
+    "Frontend Developer",
+    "Problem Solver",
+  ],
   description:
     "I am a motivated and versatile individual, always eager to take on new challenges. With a passion for learning I am dedicated to delivering high-quality results. With a positive attitude and a growth mindset, I am ready to make a meaningful contribution and achieve great things.",
   github: "https://github.com/AhlaanMI",
@@ -150,9 +159,9 @@ export const skills = [
           "https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original-wordmark.svg",
       },
       {
-        name: "Netlify",
+        name: "Vercel",
         image:
-          "https://seeklogo.com/images/N/netlify-logo-BD8F8A77E2-seeklogo.com.png",
+          "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAACoCAMAAABt9SM9AAAAe1BMVEUAAAD///+lpaUTExPp6end3d1MTEzx8fH8/PzDw8OIiIiVlZXj4+PX19e+vr6tra17e3vOzs5HR0eYmJgiIiKenp5fX18LCwvn5+cyMjIdHR3R0dFAQEBnZ2c6OjpTU1NxcXGysrJpaWlzc3ODg4MuLi4hISGOjo4YGBgdpv9SAAAEMUlEQVR4nO3a6XLiOBiFYQsMttkMJEB2QjZy/1c4+JMsWwudqRqo2NPv86MLJJmIgyRk0UkCAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAALiip9/uQI8857/dgx7J1PS3u9AbU6VUpPg4G41Gs5eg/F7KLx3vqHLh17yGU1ZqcaZczYPiuZRfoxMXf9HLW0g/I2v8RCrevNJnKT1euhf9CGst3VSxKZBWFZlXmFWF6cW70Y+wZjos9R5W7aXiximbStn24t3oRVhLk5WKbR+K8C1Iyery/ehFWHkdlhqEld9SUbRK9AJ3K4/Hm2I+WpWvTe1+PB6v5dFuXJeFrU5epotT4WHZlPQhrIFqPJyrXtvn6ybWZWYvLE3tt1njhuWpbpecaZUk25ktXAxNWQ/C+mplFZ1cMvBm9unMTth5+8pcj6OhXvv1zJawHp1WJvRFu1C96sIehLVy+r0PG7xLRT1dlvZZqlySloR1t1U2rLtYq5VXqL9Zuh/W3u12bEMwsmMpaY2zwlxQLEZm1FTVEtYos2E1repxeGq00Y+ypvC+urb7YfnjYxI2eZIKvd7YFUyHnOpppWfVITFhSaBZqobJ2G+VvdbfGbnee+jg5Cah82FNlC/SqPn+e5BH1Y1R4YzDsr50aF5loFdtv5Vs2CTwfGcKP+zQ6nxYQVYyPqKtqsV/Zd+QPGhukGTivdmwtu0Lm3XwS/6VZazZMshUnCbdD+sQhqXXD9fRJNDs51/k0Sw17iSsQR1WvV+7r574N0s6lNSSS4uk82HdR7KKHDKYgZO17hS3sSsPdVj1zklaPXqv9XDuj3Y8rHms3+o5bKiz0Vumt6bAszBhZc5l/t7ttp9hvUWzCudN0t5a6oH3FLtwYDelxpPzrBa7tPvTMIt1W/mHDOLTVpolTR6vg3ZuWLrVp9dGJvMyCXQ6rJszWUV7XJqq+sty5Y7BOjYvrMdmLJ58ZPItqfdqX/6lnQ5rdzar6Alz7uaot5uZOVk4qLk+qffC0hPdrFrVnu7x024vzPnrjUrN3qLLYRXnw4rML7N5bDb45l54Vk43+pUO1ZGFF1ZiboWKm+khs2nr00OVHaabhXwGq67f7oz/kFXrkKFx58aQzPyLqm9RP6xd7jWStSr4nOQz6HBYwXsN35OrStc5lHDPDvLm1KEd6W0We93SKVSvUtjdsJbqj+InzN6W6b0VhFn468O/llYwc/sT5L71WRXfuqy7YfnTwxc5YR6GB6nbcpTleVp81AW742Qy8YflpEjzPJsPnN/a1oN5denq+G2bVf7zG7uC8oes6kN2R/jT9F8hesvhusLPNz31+HNYV/hhsJ+it8G+2C3i3+jcTaHr4v+ZoZfO3xS6dj+/1P/fZvCvlJGDLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAb/wDtAQizbtLdwwAAAAASUVORK5CYII=",
       },
       {
         name: "VS Code",
@@ -205,7 +214,7 @@ export const education = [
     img: sliit,
     school: "Sri Lanka Institute of Information Technology",
     date: "2021 - 2025",
-    desc: " am currently pursuing a Bachelor's degree in Information Technology (B.Sc. Hons) at the Sri Lanka Institute of Information Technology (SLIIT). I have completed 6 semesters and am in Year 4, Semester 1. I have a strong foundation in SQL, Java, and MERN technologies, along with expertise in Object-Oriented Programming.",
+    desc: "I am currently pursuing a Bachelor's degree in Information Technology (B.Sc. Hons) at the Sri Lanka Institute of Information Technology (SLIIT). I have completed 6 semesters and am in Year 4, Semester 1. I have a strong foundation in SQL, Java, and MERN technologies, along with expertise in Object-Oriented Programming.",
     degree:
       "B.Sc.(Hons) in Information Technology Specialization - Information Technology",
   },
@@ -220,94 +229,6 @@ export const education = [
 ];
 
 export const projects = [
-  {
-    id: 9,
-    title: " Social Media Platform",
-    date: "Mar 2024 - May 2024",
-    description:
-      "Developed a social media platform allowing users to create profiles, post updates, and interact with other users. Built with React for the frontend and Firebase for backend services, including user authentication, realtime database, and storage",
-    image:
-      "https://private-user-images.githubusercontent.com/99312306/331869501-9191d723-1373-4d47-abdc-e5242cbc65f3.PNG?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MjYwNDA4NDYsIm5iZiI6MTcyNjA0MDU0NiwicGF0aCI6Ii85OTMxMjMwNi8zMzE4Njk1MDEtOTE5MWQ3MjMtMTM3My00ZDQ3LWFiZGMtZTUyNDJjYmM2NWYzLlBORz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDA5MTElMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQwOTExVDA3NDIyNlomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTQ3MGM1Zjk3OTI5YzFhNDU2Y2ZiNjkzYjYxODMzM2EzOWZkZDEzNzYwMjM1NTE1NjljMjEzYTlmYjIxZmY5YzQmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.tGssn-2LlDGk9sz0lTGir_GQ_NhoXO6kIoV3D69Two4",
-    tags: ["React Js", "Firebase", "Node Js", "Express Js", "Redux", "AWS"],
-    category: "web app",
-    github: "https://github.com/IjaasMohamed/ITMP-/tree/main/Organization",
-
-    member: [
-      {
-        name: "Ahlan Imamdeen",
-        img: "https://avatars.githubusercontent.com/u/99312306?v=4",
-        linkedin: "https://linkedin.com/in/ahlaan",
-        github: "https://github.com/AhlaanMI",
-      },
-      {
-        name: "Ijaas Fouzer",
-        img: "https://avatars.githubusercontent.com/u/96341377?v=4",
-        linkedin: "https://www.linkedin.com/in/ijaas-f-948804112/",
-        github: "https://github.com/IjaasMohamed",
-      },
-      {
-        name: "Shukri Husaindeen",
-        img: "https://avatars.githubusercontent.com/u/99581533?v=4",
-        linkedin: "https://www.linkedin.com/in/shukri-husaindeen/",
-        github: "https://github.com/ShukriHusaindeen",
-      },
-      {
-        name: "Nafeel SM",
-        img: "https://avatars.githubusercontent.com/u/127679674?v=4",
-        linkedin: "https://www.linkedin.com/in/nafeel-s-m-a92348270/",
-        github: "https://github.com/NafeelSM",
-      },
-    ],
-  },
-  {
-    id: 0,
-    title: "Fitness Social Network Platform",
-    date: "Mar 2024 - May 2024",
-    description:
-      " Java (Spring Boot) for backend development React.js for frontend development REST API for seamless communication",
-    image:
-      "https://private-user-images.githubusercontent.com/127679674/331699176-62ef80a1-486a-46d6-b7c8-2f04ec3413d5.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MjYwNDExMDMsIm5iZiI6MTcyNjA0MDgwMywicGF0aCI6Ii8xMjc2Nzk2NzQvMzMxNjk5MTc2LTYyZWY4MGExLTQ4NmEtNDZkNi1iN2M4LTJmMDRlYzM0MTNkNS5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQwOTExJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDkxMVQwNzQ2NDNaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1jZDFiNWRjMGU2NjNlNWRmNDc2ZTI4OWVlODFkNzM1YWMzNWU5YTljNTBhMWU4NDczNTlkOTBjNWYyNDUyOWYxJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.GUOv7QzWUhHpaxNCJ10o-q9z5yKwhCwh_ucwcJbG77Q",
-    tags: ["React Js", "Java", " REST API ", "Spring Boot"],
-    category: "web app",
-    github: "https://github.com/rishavchanda/Podstream",
-    member: [
-      {
-        name: "Ahlan Imamdeen",
-        img: "https://avatars.githubusercontent.com/u/99312306?v=4",
-        linkedin: "https://linkedin.com/in/ahlaan",
-        github: "https://github.com/AhlaanMI",
-      },
-      {
-        name: "Ijaas Fouzer",
-        img: "https://avatars.githubusercontent.com/u/96341377?v=4",
-        linkedin: "https://www.linkedin.com/in/ijaas-f-948804112/",
-        github: "https://github.com/IjaasMohamed",
-      },
-      {
-        name: "Shukri Husaindeen",
-        img: "https://avatars.githubusercontent.com/u/99581533?v=4",
-        linkedin: "https://www.linkedin.com/in/shukri-husaindeen/",
-        github: "https://github.com/ShukriHusaindeen",
-      },
-      {
-        name: "Nafeel SM",
-        img: "https://avatars.githubusercontent.com/u/127679674?v=4",
-        linkedin: "https://www.linkedin.com/in/nafeel-s-m-a92348270/",
-        github: "https://github.com/NafeelSM",
-      },
-    ],
-  },
-  {
-    id: 1,
-    title: "Restaurant Management System",
-    date: "Mar 2023 - Jul 2023",
-    description:
-      "Developed a web application for managing restaurant operations, including menu management, order processing, and reservations. Built with React for the frontend and Nodejs with Express for backend services, using MongoDB for database management.",
-    image: rms,
-    tags: ["React Js", "MongoDb", "Node Js", "Express Js"],
-    category: "web app",
-    github: "https://github.com/AchinthaDavidson/Restaurant-Management-System",
-  },
   {
     id: 2,
     title: "Neural Network-Based Chatbot for Personalized Vehicle Advice",
@@ -339,6 +260,40 @@ export const projects = [
         github: "https://github.com/NafeelSM",
       },
     ],
+  },
+  {
+    id: 9,
+    title: "🎬 Movie Explorer – React Movie Discovery App",
+    date: "May 2025 - May 2025",
+    description:
+      "Movie Explorer is a responsive and feature-rich movie discovery web app built with React and Material-UI. It integrates with the TMDb API to display trending and now-playing movies, supports real-time search with infinite scrolling, light/dark mode toggle, and lets users manage a personalized list of favorites using localStorage. The app features detailed movie pages with cast, crew, and trailers, and is fully responsive across devices." +
+      "Live Demo: movie-explorer-rust.vercel.app",
+    image: movie,
+    tags: ["React Js", "TMDb API", "Material-UI", "Axios", "React Context API"],
+    category: "web app",
+    github: "https://github.com/AhlaanMI/movie-explorer",
+  },
+  {
+    id: 0,
+    title: "🚀 Cogent Solutions – Landing Page (Recreation Project)",
+    date: "Apr 2025 - Apr 2025",
+    description:
+      "A modern, responsive landing page built as part of a technical task for Cogent Solutions. This project showcases a clean and efficient design using React and Material-UI on the frontend, with a Node.js (Express) and SQLite3 backend to simulate form handling and data persistence. The UI features a dynamic typewriter effect, smooth layout, and responsive design for all devices.⚠️ This is a self-developed recreation project, not an official product of Cogent Solutions. ",
+    image: cogen,
+    tags: ["React", "MUI", " Emotion ", "Express.js", "SQLite3"],
+    category: "web app",
+    github: "https://github.com/AhlaanMI/Cogent-Solutions",
+  },
+  {
+    id: 1,
+    title: "Restaurant Management System",
+    date: "Mar 2023 - Jul 2023",
+    description:
+      "Developed a web application for managing restaurant operations, including menu management, order processing, and reservations. Built with React for the frontend and Nodejs with Express for backend services, using MongoDB for database management.",
+    image: rms,
+    tags: ["React Js", "MongoDb", "Node Js", "Express Js"],
+    category: "web app",
+    github: "https://github.com/AchinthaDavidson/Restaurant-Management-System",
   },
   {
     id: 3,
