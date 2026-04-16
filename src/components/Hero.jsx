@@ -106,16 +106,16 @@ const Hero = () => {
 
         {/* Scroll Indicator */}
         <motion.div
-          className="absolute bottom-10 left-1/2 transform -translate-x-1/2 cursor-pointer text-center"
-          animate={{ y: [0, 10, 0] }}
+          className="fixed bottom-8 left-1/2 transform -translate-x-1/2 cursor-pointer z-40"
+          animate={{ y: [0, 12, 0] }}
           transition={{ duration: 2, repeat: Infinity }}
           onClick={() => {
             document.getElementById("about").scrollIntoView({ behavior: "smooth" });
           }}
         >
-          <div className="flex flex-col items-center gap-2">
-            <p className="text-sm text-gray-400">Scroll to explore</p>
-            <HiArrowDown className="text-2xl text-blue-500" />
+          <div className="flex flex-col items-center gap-3 bg-dark/40 backdrop-blur-sm px-4 py-3 rounded-lg border border-cyan-500/20 hover:border-cyan-500/50 transition-all">
+            <p className="text-sm text-gray-300 font-medium">Scroll to explore</p>
+            <HiArrowDown className="text-2xl text-cyan-400 animate-bounce" />
           </div>
         </motion.div>
       </div>

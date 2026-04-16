@@ -37,9 +37,10 @@ const About = () => {
           >
             <div className="aspect-square rounded-2xl bg-gradient-to-br from-cyan-500/20 to-blue-500/10 border border-slate-700/50 overflow-hidden flex items-center justify-center backdrop-blur-sm">
               <img
-                src="/hero.jpg"
+                src={`${process.env.PUBLIC_URL}/hero.jpg`}
                 alt="Ahlaan Imamdeen"
                 className="w-full h-full object-cover"
+                loading="lazy"
               />
             </div>
             <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-2xl opacity-10 blur-2xl" />
