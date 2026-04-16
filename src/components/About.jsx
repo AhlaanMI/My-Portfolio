@@ -1,6 +1,5 @@
 import React from "react";
 import { motion } from "framer-motion";
-import heroImage from "../images/hero.jpg";
 
 const About = () => {
   const stats = [
@@ -38,7 +37,7 @@ const About = () => {
           >
             <div className="aspect-square rounded-2xl bg-gradient-to-br from-cyan-500/20 to-blue-500/10 border border-slate-700/50 overflow-hidden flex items-center justify-center backdrop-blur-sm">
               <img
-                src={heroImage}
+                src="/hero.jpg"
                 alt="Ahlaan Imamdeen"
                 className="w-full h-full object-cover"
               />
