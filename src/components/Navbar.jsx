@@ -66,10 +66,12 @@ const Navbar = () => {
         <motion.a
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
-          href="mailto:mohamedahlan58@gmail.com"
+          href="https://wa.me/94777326274"
+          target="_blank"
+          rel="noopener noreferrer"
           className="hidden md:block btn-primary text-sm"
         >
-          Get In Touch
+          WhatsApp
         </motion.a>
 
         {/* Mobile Menu Button */}
@@ -104,10 +106,12 @@ const Navbar = () => {
               </ScrollLink>
             ))}
             <a
-              href="mailto:mohamedahlan58@gmail.com"
+              href="https://wa.me/94777326274"
+              target="_blank"
+              rel="noopener noreferrer"
               className="btn-primary text-sm text-center"
             >
-              Get In Touch
+              WhatsApp
             </a>
           </div>
         </motion.div>

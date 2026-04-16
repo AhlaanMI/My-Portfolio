@@ -7,7 +7,7 @@ export const projectsData = [
       "Freelance web development practice delivering production-ready websites. Full lifecycle from requirements gathering, UI design, development, deployment, and SEO optimization.",
     tags: ["Freelance", "Web Dev", "Client Projects", "SEO"],
     duration: "Dec 2025 – Present",
-    github: "https://github.com/AhlaanMI",
+    github: null,
     liveDemo: "https://flowstack.ink",
     image: null,
   },
@@ -20,7 +20,7 @@ export const projectsData = [
     tags: ["Python", "TensorFlow", "Flask", "NLP", "AI/ML"],
     duration: "Jul 2024 – Jun 2025",
     github: "https://github.com/AhlaanMI",
-    liveDemo: null,
+    liveDemo: "https://automile-landing-page-main.vercel.app/",
     image: null,
   },
   {
