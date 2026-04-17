@@ -8,20 +8,61 @@ import {
   FaGitAlt,
   FaPython,
   FaJava,
+  FaHtml5,
+  FaCss3Alt,
+  FaGithub,
+  FaGraduationCap,
+  FaTools,
 } from "react-icons/fa";
+import {
+  SiTypescript,
+  SiJavascript,
+  SiNextdotjs,
+  SiTailwindcss,
+  SiMongodb,
+  SiPostgresql,
+  SiFirebase,
+  SiExpress,
+  SiLaravel,
+  SiKotlin,
+  SiTensorflow,
+  SiFigma,
+} from "react-icons/si";
 
 const Skills = () => {
   const iconMap = {
+    // Frontend
     "React.js": FaReact,
-    "Next.js": FaReact,
+    "Next.js": SiNextdotjs,
+    TypeScript: SiTypescript,
+    "JavaScript (ES6+)": SiJavascript,
+    HTML5: FaHtml5,
+    CSS3: FaCss3Alt,
+    "Tailwind CSS": SiTailwindcss,
+    "Responsive Design": FaTools,
+    Figma: SiFigma,
+    // Backend
     "Node.js": FaNode,
-    "Express.js": FaNode,
+    "Express.js": SiExpress,
+    Laravel: SiLaravel,
+    "REST APIs": FaTools,
+    "MVC Architecture": FaTools,
+    // Databases
     MySQL: FaDatabase,
-    MongoDB: FaDatabase,
-    PostgreSQL: FaDatabase,
+    MongoDB: SiMongodb,
+    PostgreSQL: SiPostgresql,
+    Firebase: SiFirebase,
+    // DevOps & Tools
     Git: FaGitAlt,
-    Python: FaPython,
+    GitHub: FaGithub,
+    "CI/CD": FaTools,
+    "Agile/Scrum": FaGraduationCap,
+    // Other
     Java: FaJava,
+    Kotlin: SiKotlin,
+    DSA: FaGraduationCap,
+    Python: FaPython,
+    TensorFlow: SiTensorflow,
   };
 
   const container = {
