@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { HiArrowDown } from "react-icons/hi";
 
 const Hero = () => {
   const [displayedText, setDisplayedText] = useState("");
@@ -74,7 +73,9 @@ const Hero = () => {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="text-lg md:text-xl text-gray-400 mb-12 max-w-2xl mx-auto leading-relaxed"
         >
-          I build things for the web — fast, scalable, and end-to-end. From responsive frontends to robust backends, I craft digital experiences that matter.
+          I build things for the web — fast, scalable, and end-to-end. From
+          responsive frontends to robust backends, I craft digital experiences
+          that matter.
         </motion.p>
 
         <motion.div
@@ -90,7 +91,9 @@ const Hero = () => {
             className="btn-primary group"
           >
             View My Work
-            <span className="inline-block ml-2 group-hover:translate-x-1 transition-transform">→</span>
+            <span className="inline-block ml-2 group-hover:translate-x-1 transition-transform">
+              →
+            </span>
           </motion.a>
           <motion.a
             whileHover={{ scale: 1.05 }}
@@ -102,21 +105,6 @@ const Hero = () => {
           >
             View on GitHub
           </motion.a>
-        </motion.div>
-
-        {/* Scroll Indicator */}
-        <motion.div
-          className="absolute bottom-10 left-1/2 transform -translate-x-1/2 cursor-pointer"
-          animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 2, repeat: Infinity }}
-          onClick={() => {
-            document.getElementById("about").scrollIntoView({ behavior: "smooth" });
-          }}
-        >
-          <div className="flex flex-col items-center gap-2">
-            <p className="text-sm text-gray-400">Scroll to explore</p>
-            <HiArrowDown className="text-2xl text-blue-500" />
-          </div>
         </motion.div>
       </div>
     </section>
