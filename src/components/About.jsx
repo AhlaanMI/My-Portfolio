@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import aboutImg from "../images/hero.jpg";
 
 const About = () => {
   const stats = [
@@ -27,7 +28,7 @@ const About = () => {
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-12 items-center">
-          {/* Left: Image Placeholder */}
+          {/* Left: Profile Image */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -36,7 +37,11 @@ const About = () => {
             className="relative"
           >
             <div className="aspect-square rounded-2xl bg-gradient-to-br from-cyan-500/20 to-blue-500/10 border border-slate-700/50 overflow-hidden flex items-center justify-center backdrop-blur-sm">
-              <div className="text-8xl">👨‍💻</div>
+              <img
+                src={aboutImg}
+                alt="About me"
+                className="h-full w-full object-cover"
+              />
             </div>
             <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-2xl opacity-10 blur-2xl" />
           </motion.div>
@@ -49,11 +54,17 @@ const About = () => {
             viewport={{ once: true }}
           >
             <p className="text-base md:text-lg text-gray-400 mb-6 leading-relaxed">
-              Full-stack developer with 1.5+ years of experience building scalable web applications across the entire stack — from responsive React and Next.js frontends to robust Laravel and Node.js backends, with MySQL and MongoDB for data management.
+              Full-stack developer with 1.5+ years of experience building
+              scalable web applications across the entire stack — from
+              responsive React and Next.js frontends to robust Laravel and
+              Node.js backends, with MySQL and MongoDB for data management.
             </p>
 
             <p className="text-base md:text-lg text-gray-400 mb-8 leading-relaxed">
-              I've contributed to production-level codebases at IT Starter and Gamage Recruiters, and I'm the founder of Flowstack, a freelance web development practice. I'm passionate about clean code, user experience, and solving complex problems.
+              I've contributed to production-level codebases at IT Starter and
+              Gamage Recruiters, and I'm the founder of Flowstack, a freelance
+              web development practice. I'm passionate about clean code, user
+              experience, and solving complex problems.
             </p>
 
             {/* Stats Grid */}
