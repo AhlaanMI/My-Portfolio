@@ -1,0 +1,2679 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MediBook — UX Case Study</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Lato:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --teal: #0d7b6e;
+        --teal-light: #e0f5f2;
+        --teal-mid: #3db8a8;
+        --coral: #e85c3a;
+        --coral-light: #fdf0ec;
+        --navy: #0e2432;
+        --navy2: #162e3e;
+        --text: #1a2930;
+        --text-muted: #4a6070;
+        --text-light: #8aa0ae;
+        --border: #d6e8e5;
+        --bg: #f4faf8;
+        --white: #ffffff;
+        --amber: #e8a830;
+        --amber-light: #fef8ec;
+      }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: "Lato", sans-serif;
+        background: var(--white);
+        color: var(--text);
+        line-height: 1.6;
+        font-weight: 300;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      /* NAV */
+      .nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 100;
+        background: rgba(255, 255, 255, 0.97);
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid var(--border);
+        padding: 0 2rem;
+      }
+      .nav-inner {
+        max-width: 1140px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 62px;
+      }
+      .nav-logo {
+        font-family: "Playfair Display", serif;
+        font-size: 18px;
+        color: var(--navy);
+      }
+      .nav-links {
+        display: flex;
+        gap: 2rem;
+        list-style: none;
+      }
+      .nav-links a {
+        font-size: 13px;
+        color: var(--text-muted);
+        font-weight: 400;
+        letter-spacing: 0.03em;
+        transition: color 0.2s;
+      }
+      .nav-links a:hover {
+        color: var(--teal);
+      }
+      .nav-pill {
+        background: var(--teal);
+        color: white;
+        border-radius: 20px;
+        padding: 8px 20px;
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 0.03em;
+      }
+
+      /* HERO */
+      .hero {
+        padding: 140px 2rem 100px;
+        background: var(--white);
+        position: relative;
+        overflow: hidden;
+      }
+      .hero-accent-1 {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 55%;
+        height: 100%;
+        background: var(--bg);
+        clip-path: polygon(15% 0, 100% 0, 100% 100%, 0 100%);
+      }
+      .hero-inner {
+        max-width: 1140px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 480px;
+        gap: 80px;
+        align-items: center;
+        position: relative;
+        z-index: 1;
+      }
+      .hero-cs-num {
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--teal);
+        margin-bottom: 20px;
+      }
+      .hero h1 {
+        font-family: "Playfair Display", serif;
+        font-size: clamp(42px, 5vw, 72px);
+        line-height: 1.05;
+        color: var(--navy);
+        margin-bottom: 6px;
+      }
+      .hero h1 span {
+        color: var(--teal);
+        font-style: italic;
+      }
+      .hero-sub {
+        font-size: 17px;
+        color: var(--text-muted);
+        font-weight: 300;
+        line-height: 1.75;
+        margin-bottom: 40px;
+        max-width: 460px;
+      }
+      .hero-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 48px;
+      }
+      .tag {
+        display: inline-block;
+        font-size: 12px;
+        padding: 5px 14px;
+        border-radius: 20px;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+      }
+      .tag-teal {
+        background: var(--teal-light);
+        color: var(--teal);
+      }
+      .tag-coral {
+        background: var(--coral-light);
+        color: var(--coral);
+      }
+      .tag-navy {
+        background: #e8f0f5;
+        color: var(--navy);
+      }
+      .hero-meta {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        border-top: 1px solid var(--border);
+        padding-top: 32px;
+      }
+      .hero-meta-item label {
+        display: block;
+        font-size: 11px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--text-light);
+        margin-bottom: 8px;
+        font-weight: 700;
+      }
+      .hero-meta-item span {
+        font-size: 15px;
+        color: var(--text);
+        font-weight: 400;
+      }
+      /* Hero visual */
+      .hero-visual {
+        position: relative;
+      }
+      .browser-frame {
+        background: var(--white);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 24px 64px rgba(13, 36, 50, 0.12);
+      }
+      .browser-bar {
+        background: #f0f4f7;
+        padding: 12px 16px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        border-bottom: 1px solid var(--border);
+      }
+      .browser-dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+      }
+      .bd-red {
+        background: #ff5f57;
+      }
+      .bd-yellow {
+        background: #febc2e;
+      }
+      .bd-green {
+        background: #28c840;
+      }
+      .browser-url {
+        flex: 1;
+        background: white;
+        border-radius: 6px;
+        padding: 5px 12px;
+        font-size: 11px;
+        color: var(--text-light);
+        margin: 0 12px;
+        border: 1px solid var(--border);
+      }
+      .browser-content {
+        padding: 0;
+      }
+      .stat-pills {
+        margin-top: 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+      .sp-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: var(--bg);
+        border-radius: 8px;
+        padding: 10px 14px;
+      }
+      .sp-label {
+        font-size: 12px;
+        color: var(--text-muted);
+      }
+      .sp-num {
+        font-size: 16px;
+        font-weight: 700;
+        color: var(--teal);
+      }
+
+      /* SECTION */
+      .section {
+        padding: 100px 2rem;
+      }
+      .section-inner {
+        max-width: 1140px;
+        margin: 0 auto;
+      }
+      .section-label {
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--teal);
+        margin-bottom: 16px;
+      }
+      .section-title {
+        font-family: "Playfair Display", serif;
+        font-size: clamp(30px, 4vw, 46px);
+        color: var(--navy);
+        line-height: 1.15;
+        margin-bottom: 24px;
+      }
+      .section-body {
+        font-size: 16px;
+        color: var(--text-muted);
+        line-height: 1.85;
+        max-width: 680px;
+        font-weight: 300;
+      }
+      .section-alt {
+        background: var(--bg);
+      }
+      .section-dark {
+        background: var(--navy);
+      }
+
+      /* PROBLEM */
+      .problem-layout {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 64px;
+        align-items: start;
+        margin-top: 60px;
+      }
+      .problem-statement {
+        background: var(--navy);
+        border-radius: 20px;
+        padding: 44px;
+        position: relative;
+        overflow: hidden;
+      }
+      .problem-statement::after {
+        content: "";
+        position: absolute;
+        bottom: -80px;
+        right: -80px;
+        width: 240px;
+        height: 240px;
+        border-radius: 50%;
+        background: rgba(61, 184, 168, 0.12);
+      }
+      .ps-label {
+        font-size: 11px;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: var(--teal-mid);
+        margin-bottom: 18px;
+        font-weight: 700;
+      }
+      .ps-text {
+        font-family: "Playfair Display", serif;
+        font-size: 19px;
+        color: white;
+        line-height: 1.65;
+        font-style: italic;
+        position: relative;
+        z-index: 1;
+      }
+      .stats-col {
+        display: flex;
+        flex-direction: column;
+        gap: 28px;
+      }
+      .stat-block {
+        border-left: 4px solid var(--teal);
+        padding: 0 0 0 24px;
+      }
+      .stat-block .num {
+        font-family: "Playfair Display", serif;
+        font-size: 52px;
+        color: var(--navy);
+        line-height: 1;
+      }
+      .stat-block .label {
+        font-size: 14px;
+        color: var(--text-muted);
+        margin-top: 6px;
+        line-height: 1.5;
+        font-weight: 300;
+      }
+
+      /* RESEARCH */
+      .research-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        margin-top: 48px;
+      }
+      .insight-card {
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        padding: 28px;
+        background: white;
+        transition: all 0.2s;
+        cursor: default;
+      }
+      .insight-card:hover {
+        border-color: var(--teal);
+        box-shadow: 0 4px 20px rgba(13, 123, 110, 0.08);
+      }
+      .ic-type {
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--text-light);
+        margin-bottom: 10px;
+      }
+      .ic-label {
+        font-size: 15px;
+        font-weight: 700;
+        color: var(--text);
+        margin-bottom: 12px;
+      }
+      .ic-quote {
+        font-size: 13px;
+        color: var(--text-muted);
+        line-height: 1.75;
+        font-style: italic;
+        border-left: 3px solid var(--teal-mid);
+        padding-left: 14px;
+        font-weight: 300;
+      }
+
+      /* PERSONA */
+      .persona-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+        margin-top: 48px;
+      }
+      .persona-card {
+        border: 1px solid var(--border);
+        border-radius: 20px;
+        overflow: hidden;
+        background: white;
+      }
+      .pc-top {
+        padding: 28px;
+        border-bottom: 1px solid var(--border);
+        display: flex;
+        align-items: flex-start;
+        gap: 16px;
+      }
+      .pc-avatar {
+        width: 52px;
+        height: 52px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "Playfair Display", serif;
+        font-size: 18px;
+        font-weight: 500;
+        flex-shrink: 0;
+      }
+      .av-teal {
+        background: var(--teal-light);
+        color: var(--teal);
+      }
+      .av-navy {
+        background: #e8f0f5;
+        color: var(--navy);
+      }
+      .pc-name {
+        font-size: 16px;
+        font-weight: 700;
+        color: var(--text);
+        margin-bottom: 4px;
+      }
+      .pc-role {
+        font-size: 13px;
+        color: var(--text-muted);
+        line-height: 1.5;
+        font-weight: 300;
+      }
+      .pc-body {
+        padding: 24px 28px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+      }
+      .pc-col-title {
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--text-light);
+        margin-bottom: 12px;
+      }
+      .pc-list {
+        list-style: none;
+        padding: 0;
+      }
+      .pc-list li {
+        font-size: 13px;
+        color: var(--text-muted);
+        padding: 5px 0 5px 14px;
+        border-bottom: 1px solid var(--bg);
+        line-height: 1.5;
+        position: relative;
+        font-weight: 300;
+      }
+      .pc-list li:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 12px;
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background: var(--teal);
+      }
+      .pc-list li:last-child {
+        border: none;
+      }
+
+      /* HMW */
+      .hmw-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+        margin-top: 48px;
+      }
+      .hmw-card {
+        background: white;
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        padding: 28px;
+      }
+      .hmw-tag {
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--teal);
+        margin-bottom: 12px;
+      }
+      .hmw-text {
+        font-size: 15px;
+        color: var(--text);
+        line-height: 1.65;
+        font-weight: 300;
+      }
+
+      /* FLOW */
+      .flow-wrapper {
+        margin-top: 48px;
+        background: white;
+        border: 1px solid var(--border);
+        border-radius: 20px;
+        padding: 44px;
+        overflow-x: auto;
+      }
+      .flow-compare {
+        display: grid;
+        grid-template-columns: 1fr 40px 1fr;
+        gap: 16px;
+        align-items: center;
+      }
+      .fc-col-title {
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--text-light);
+        margin-bottom: 24px;
+      }
+      .fc-badge {
+        font-size: 11px;
+        font-weight: 700;
+        padding: 4px 12px;
+        border-radius: 20px;
+      }
+      .fc-badge.before {
+        background: #fdf0ec;
+        color: var(--coral);
+      }
+      .fc-badge.after {
+        background: var(--teal-light);
+        color: var(--teal);
+      }
+      .fc-steps {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+      .fc-step {
+        padding: 10px 16px;
+        border-radius: 8px;
+        font-size: 13px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 300;
+      }
+      .fc-step.old {
+        background: #fdf8f7;
+        border: 1px solid #f5c4b3;
+        color: var(--text-muted);
+      }
+      .fc-step.old.eliminated {
+        opacity: 0.4;
+        text-decoration: line-through;
+      }
+      .fc-step.new {
+        background: var(--teal-light);
+        border: 1px solid #9fe1cb;
+        color: var(--teal);
+      }
+      .fc-vs {
+        text-align: center;
+        font-family: "Playfair Display", serif;
+        font-size: 14px;
+        color: var(--text-light);
+        font-style: italic;
+      }
+
+      /* SOLUTIONS */
+      .sol-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        margin-top: 48px;
+      }
+      .sol-card {
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        padding: 28px;
+        background: white;
+        display: flex;
+        gap: 16px;
+        align-items: flex-start;
+        transition: all 0.2s;
+      }
+      .sol-card:hover {
+        border-color: var(--teal);
+        transform: translateY(-2px);
+      }
+      .sol-icon-box {
+        width: 44px;
+        height: 44px;
+        border-radius: 12px;
+        background: var(--teal-light);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 18px;
+        flex-shrink: 0;
+      }
+      .sol-title {
+        font-size: 15px;
+        font-weight: 700;
+        color: var(--text);
+        margin-bottom: 6px;
+      }
+      .sol-desc {
+        font-size: 13px;
+        color: var(--text-muted);
+        line-height: 1.65;
+        font-weight: 300;
+      }
+
+      /* TESTING */
+      .test-layout {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        margin-top: 48px;
+      }
+      .test-card {
+        border-radius: 16px;
+        padding: 28px;
+      }
+      .test-card.fail {
+        background: var(--coral-light);
+        border: 1px solid #f5c4b3;
+      }
+      .test-card.fix {
+        background: var(--teal-light);
+        border: 1px solid #9fe1cb;
+      }
+      .tc-tag {
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        margin-bottom: 14px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .fail .tc-tag {
+        color: var(--coral);
+      }
+      .fix .tc-tag {
+        color: var(--teal);
+      }
+      .tc-text {
+        font-size: 14px;
+        color: var(--text);
+        line-height: 1.7;
+        font-weight: 300;
+      }
+
+      /* OUTCOMES */
+      .outcomes-row {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+        margin-top: 48px;
+      }
+      .oc-card {
+        text-align: center;
+        padding: 36px 20px;
+        border-radius: 20px;
+        border: 1px solid var(--border);
+        background: white;
+        transition: all 0.2s;
+      }
+      .oc-card:hover {
+        border-color: var(--teal);
+        box-shadow: 0 8px 32px rgba(13, 123, 110, 0.08);
+      }
+      .oc-num {
+        font-family: "Playfair Display", serif;
+        font-size: 48px;
+        color: var(--teal);
+        line-height: 1;
+      }
+      .oc-label {
+        font-size: 13px;
+        color: var(--text-muted);
+        margin-top: 10px;
+        line-height: 1.5;
+        font-weight: 300;
+      }
+      .quote-block {
+        margin-top: 52px;
+        background: var(--navy);
+        border-radius: 20px;
+        padding: 52px;
+        position: relative;
+        overflow: hidden;
+      }
+      .quote-block::before {
+        content: '"';
+        position: absolute;
+        top: -20px;
+        left: 32px;
+        font-family: "Playfair Display", serif;
+        font-size: 160px;
+        color: rgba(61, 184, 168, 0.08);
+        line-height: 1;
+      }
+      .quote-text {
+        font-family: "Playfair Display", serif;
+        font-size: clamp(18px, 2.5vw, 26px);
+        color: white;
+        line-height: 1.6;
+        font-style: italic;
+        position: relative;
+        z-index: 1;
+        max-width: 700px;
+        margin: 0 auto 20px;
+        text-align: center;
+      }
+      .quote-attr {
+        text-align: center;
+        font-size: 13px;
+        color: rgba(255, 255, 255, 0.4);
+        font-weight: 400;
+      }
+
+      /* LEARNINGS */
+      .learnings {
+        margin-top: 52px;
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        counter-reset: items;
+      }
+      .learning {
+        display: grid;
+        grid-template-columns: 80px 1fr;
+        gap: 32px;
+        padding: 36px 0;
+        border-bottom: 1px solid var(--border);
+        align-items: flex-start;
+      }
+      .learning:last-child {
+        border: none;
+      }
+      .l-num {
+        font-family: "Playfair Display", serif;
+        font-size: 48px;
+        color: var(--teal-light);
+        line-height: 1;
+        font-weight: 400;
+      }
+      .l-title {
+        font-size: 17px;
+        font-weight: 700;
+        color: var(--text);
+        margin-bottom: 10px;
+      }
+      .l-text {
+        font-size: 15px;
+        color: var(--text-muted);
+        line-height: 1.8;
+        font-weight: 300;
+      }
+
+      /* DESKTOP MOCKUP */
+      .desktop-preview {
+        margin: 48px 0;
+        background: white;
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        overflow: hidden;
+      }
+      .desktop-topbar {
+        background: #f0f4f7;
+        border-bottom: 1px solid var(--border);
+        padding: 14px 20px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      .db-dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+      }
+      .db-red {
+        background: #ff5f57;
+      }
+      .db-yellow {
+        background: #febc2e;
+      }
+      .db-green {
+        background: #28c840;
+      }
+      .desktop-content {
+        padding: 0;
+      }
+
+      /* FOOTER */
+      .footer {
+        background: var(--navy);
+        padding: 64px 2rem;
+        text-align: center;
+      }
+      .footer-name {
+        font-family: "Playfair Display", serif;
+        font-size: 26px;
+        color: white;
+        margin-bottom: 8px;
+      }
+      .footer p {
+        font-size: 14px;
+        color: rgba(255, 255, 255, 0.35);
+        font-weight: 300;
+        margin-top: 6px;
+      }
+
+      .section-divider {
+        height: 1px;
+        background: var(--border);
+        max-width: 1140px;
+        margin: 0 auto;
+      }
+
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .fade-up {
+        animation: fadeUp 0.6s ease both;
+      }
+      .delay-1 {
+        animation-delay: 0.15s;
+      }
+      .delay-2 {
+        animation-delay: 0.3s;
+      }
+
+      @media (max-width: 768px) {
+        .hero-inner,
+        .problem-layout,
+        .persona-grid,
+        .test-layout,
+        .hmw-grid,
+        .sol-grid {
+          grid-template-columns: 1fr;
+        }
+        .hero-visual {
+          display: none;
+        }
+        .hero-accent-1 {
+          display: none;
+        }
+        .flow-compare {
+          grid-template-columns: 1fr;
+        }
+        .fc-vs {
+          display: none;
+        }
+        .outcomes-row {
+          grid-template-columns: 1fr 1fr;
+        }
+        .learning {
+          grid-template-columns: 48px 1fr;
+          gap: 16px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="nav">
+      <div class="nav-inner">
+        <div class="nav-logo">Portfolio</div>
+        <ul class="nav-links">
+          <li><a href="#overview">Overview</a></li>
+          <li><a href="#research">Research</a></li>
+          <li><a href="#define">Define</a></li>
+          <li><a href="#design">Design</a></li>
+          <li><a href="#outcomes">Outcomes</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-accent-1"></div>
+      <div class="hero-inner">
+        <div class="hero-text fade-up">
+          <div class="hero-cs-num">UX Case Study 02 of 02</div>
+          <h1>Medi<span>Book</span></h1>
+          <p
+            style="
+              font-family: &quot;Playfair Display&quot;, serif;
+              font-size: 22px;
+              color: var(--navy);
+              margin-bottom: 16px;
+              font-weight: 400;
+            "
+          >
+            Telemedicine Booking Platform
+          </p>
+          <p class="hero-sub">
+            Redesigning an online doctor appointment flow that was losing 64% of
+            patients before they confirmed a booking — by rebuilding trust,
+            reducing friction, and making the experience feel as clear as
+            booking a flight.
+          </p>
+          <div class="hero-tags">
+            <span class="tag tag-teal">Web Platform</span>
+            <span class="tag tag-coral">Healthtech</span>
+            <span class="tag tag-navy">Service Design</span>
+            <span class="tag tag-teal">UX Research</span>
+          </div>
+          <div class="hero-meta">
+            <div class="hero-meta-item">
+              <label>My Role</label><span>UX Researcher + Designer</span>
+            </div>
+            <div class="hero-meta-item">
+              <label>Timeline</label><span>8 Weeks · 2024</span>
+            </div>
+            <div class="hero-meta-item">
+              <label>Tools</label><span>Figma · FigJam · Lookback</span>
+            </div>
+          </div>
+        </div>
+        <div class="hero-visual fade-up delay-2">
+          <!-- Browser-framed web mockup -->
+          <div class="browser-frame">
+            <div class="browser-bar">
+              <div class="browser-dot bd-red"></div>
+              <div class="browser-dot bd-yellow"></div>
+              <div class="browser-dot bd-green"></div>
+              <div class="browser-url">medibook.lk/find-a-doctor</div>
+            </div>
+            <svg
+              viewBox="0 0 440 340"
+              xmlns="http://www.w3.org/2000/svg"
+              style="width: 100%; display: block"
+            >
+              <rect width="440" height="340" fill="#f4faf8" />
+              <!-- Top search bar -->
+              <rect
+                x="20"
+                y="20"
+                width="400"
+                height="40"
+                rx="10"
+                fill="white"
+                stroke="#d6e8e5"
+                stroke-width="1"
+              />
+              <text
+                x="40"
+                y="44"
+                fill="#8aa0ae"
+                font-family="Lato,sans-serif"
+                font-size="12"
+                font-weight="300"
+              >
+                Search by symptom, specialty or doctor name...
+              </text>
+              <rect
+                x="380"
+                y="28"
+                width="28"
+                height="24"
+                rx="6"
+                fill="#0d7b6e"
+              />
+              <text
+                x="387"
+                y="44"
+                fill="white"
+                font-family="Lato,sans-serif"
+                font-size="11"
+              >
+                →
+              </text>
+              <!-- Filter tags -->
+              <rect
+                x="20"
+                y="70"
+                width="70"
+                height="22"
+                rx="11"
+                fill="#0d7b6e"
+              />
+              <text
+                x="36"
+                y="84"
+                fill="white"
+                font-family="Lato,sans-serif"
+                font-size="10"
+                font-weight="700"
+              >
+                Available now
+              </text>
+              <rect
+                x="98"
+                y="70"
+                width="58"
+                height="22"
+                rx="11"
+                fill="white"
+                stroke="#d6e8e5"
+                stroke-width="1"
+              />
+              <text
+                x="111"
+                y="84"
+                fill="#4a6070"
+                font-family="Lato,sans-serif"
+                font-size="10"
+              >
+                General GP
+              </text>
+              <rect
+                x="164"
+                y="70"
+                width="56"
+                height="22"
+                rx="11"
+                fill="white"
+                stroke="#d6e8e5"
+                stroke-width="1"
+              />
+              <text
+                x="175"
+                y="84"
+                fill="#4a6070"
+                font-family="Lato,sans-serif"
+                font-size="10"
+              >
+                Specialist
+              </text>
+              <rect
+                x="228"
+                y="70"
+                width="60"
+                height="22"
+                rx="11"
+                fill="white"
+                stroke="#d6e8e5"
+                stroke-width="1"
+              />
+              <text
+                x="240"
+                y="84"
+                fill="#4a6070"
+                font-family="Lato,sans-serif"
+                font-size="10"
+              >
+                Under 1000
+              </text>
+              <!-- Doctor card 1 — highlighted -->
+              <rect
+                x="20"
+                y="104"
+                width="190"
+                height="130"
+                rx="12"
+                fill="white"
+                stroke="#0d7b6e"
+                stroke-width="1.5"
+              />
+              <!-- Verified badge -->
+              <rect
+                x="28"
+                y="112"
+                width="50"
+                height="16"
+                rx="8"
+                fill="#e0f5f2"
+              />
+              <text
+                x="35"
+                y="123"
+                fill="#0d7b6e"
+                font-family="Lato,sans-serif"
+                font-size="9"
+                font-weight="700"
+              >
+                ✓ Verified
+              </text>
+              <!-- Doctor avatar placeholder -->
+              <circle cx="48" cy="160" r="22" fill="#e0f5f2" />
+              <text
+                x="40"
+                y="165"
+                fill="#0d7b6e"
+                font-family="Lato,sans-serif"
+                font-size="14"
+                font-weight="700"
+              >
+                DR
+              </text>
+              <text
+                x="78"
+                y="152"
+                fill="#0e2432"
+                font-family="Lato,sans-serif"
+                font-size="12"
+                font-weight="700"
+              >
+                Dr. Ruwan Perera
+              </text>
+              <text
+                x="78"
+                y="166"
+                fill="#4a6070"
+                font-family="Lato,sans-serif"
+                font-size="10"
+                font-weight="300"
+              >
+                General Physician
+              </text>
+              <text
+                x="78"
+                y="180"
+                fill="#4a6070"
+                font-family="Lato,sans-serif"
+                font-size="10"
+                font-weight="300"
+              >
+                12 yrs exp · ★ 4.8
+              </text>
+              <text
+                x="28"
+                y="205"
+                fill="#8aa0ae"
+                font-family="Lato,sans-serif"
+                font-size="10"
+                font-weight="300"
+              >
+                Next available
+              </text>
+              <text
+                x="28"
+                y="218"
+                fill="#0d7b6e"
+                font-family="Lato,sans-serif"
+                font-size="11"
+                font-weight="700"
+              >
+                Today 3:00 PM
+              </text>
+              <rect
+                x="28"
+                y="224"
+                width="170"
+                height="4"
+                rx="2"
+                fill="#e0f5f2"
+              />
+              <!-- Book button -->
+              <rect
+                x="140"
+                y="198"
+                width="60"
+                height="26"
+                rx="8"
+                fill="#0d7b6e"
+              />
+              <text
+                x="152"
+                y="214"
+                fill="white"
+                font-family="Lato,sans-serif"
+                font-size="10"
+                font-weight="700"
+              >
+                Book
+              </text>
+              <!-- Doctor card 2 -->
+              <rect
+                x="224"
+                y="104"
+                width="190"
+                height="130"
+                rx="12"
+                fill="white"
+                stroke="#d6e8e5"
+                stroke-width="1"
+              />
+              <rect
+                x="232"
+                y="112"
+                width="50"
+                height="16"
+                rx="8"
+                fill="#e0f5f2"
+              />
+              <text
+                x="239"
+                y="123"
+                fill="#0d7b6e"
+                font-family="Lato,sans-serif"
+                font-size="9"
+                font-weight="700"
+              >
+                ✓ Verified
+              </text>
+              <circle cx="252" cy="160" r="22" fill="#e8f0f5" />
+              <text
+                x="244"
+                y="165"
+                fill="#0e2432"
+                font-family="Lato,sans-serif"
+                font-size="14"
+                font-weight="700"
+              >
+                AF
+              </text>
+              <text
+                x="282"
+                y="152"
+                fill="#0e2432"
+                font-family="Lato,sans-serif"
+                font-size="12"
+                font-weight="700"
+              >
+                Dr. Amali Perera
+              </text>
+              <text
+                x="282"
+                y="166"
+                fill="#4a6070"
+                font-family="Lato,sans-serif"
+                font-size="10"
+                font-weight="300"
+              >
+                Cardiologist
+              </text>
+              <text
+                x="282"
+                y="180"
+                fill="#4a6070"
+                font-family="Lato,sans-serif"
+                font-size="10"
+                font-weight="300"
+              >
+                8 yrs exp · ★ 4.9
+              </text>
+              <text
+                x="232"
+                y="205"
+                fill="#8aa0ae"
+                font-family="Lato,sans-serif"
+                font-size="10"
+                font-weight="300"
+              >
+                Next available
+              </text>
+              <text
+                x="232"
+                y="218"
+                fill="#0d7b6e"
+                font-family="Lato,sans-serif"
+                font-size="11"
+                font-weight="700"
+              >
+                Tomorrow 10:00 AM
+              </text>
+              <rect
+                x="344"
+                y="198"
+                width="60"
+                height="26"
+                rx="8"
+                fill="white"
+                stroke="#d6e8e5"
+                stroke-width="1"
+              />
+              <text
+                x="354"
+                y="214"
+                fill="#0e2432"
+                font-family="Lato,sans-serif"
+                font-size="10"
+                font-weight="700"
+              >
+                Book
+              </text>
+              <!-- Progress bar step indicator -->
+              <rect
+                x="20"
+                y="248"
+                width="400"
+                height="1"
+                rx="1"
+                fill="#d6e8e5"
+              />
+              <text
+                x="20"
+                y="268"
+                fill="#8aa0ae"
+                font-family="Lato,sans-serif"
+                font-size="10"
+                font-weight="300"
+              >
+                Step 1 of 5 — Choose your doctor
+              </text>
+              <rect
+                x="20"
+                y="276"
+                width="80"
+                height="4"
+                rx="2"
+                fill="#0d7b6e"
+              />
+              <rect
+                x="100"
+                y="276"
+                width="80"
+                height="4"
+                rx="2"
+                fill="#d6e8e5"
+              />
+              <rect
+                x="180"
+                y="276"
+                width="80"
+                height="4"
+                rx="2"
+                fill="#d6e8e5"
+              />
+              <rect
+                x="260"
+                y="276"
+                width="80"
+                height="4"
+                rx="2"
+                fill="#d6e8e5"
+              />
+              <rect
+                x="340"
+                y="276"
+                width="80"
+                height="4"
+                rx="2"
+                fill="#d6e8e5"
+              />
+              <!-- Results count -->
+              <text
+                x="20"
+                y="298"
+                fill="#4a6070"
+                font-family="Lato,sans-serif"
+                font-size="11"
+                font-weight="300"
+              >
+                Showing 12 doctors available in your area
+              </text>
+              <rect
+                x="370"
+                y="288"
+                width="50"
+                height="20"
+                rx="6"
+                fill="white"
+                stroke="#d6e8e5"
+                stroke-width="1"
+              />
+              <text
+                x="382"
+                y="301"
+                fill="#4a6070"
+                font-family="Lato,sans-serif"
+                font-size="10"
+              >
+                Sort ↕
+              </text>
+            </svg>
+          </div>
+          <!-- Key metric -->
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr 1fr;
+              gap: 10px;
+              margin-top: 16px;
+            "
+          >
+            <div
+              style="
+                background: var(--bg);
+                border: 1px solid var(--border);
+                border-radius: 10px;
+                padding: 14px;
+                text-align: center;
+              "
+            >
+              <div
+                style="
+                  font-family: &quot;Playfair Display&quot;, serif;
+                  font-size: 24px;
+                  color: var(--teal);
+                  line-height: 1;
+                "
+              >
+                58%
+              </div>
+              <div
+                style="
+                  font-size: 11px;
+                  color: var(--text-muted);
+                  margin-top: 4px;
+                  font-weight: 300;
+                "
+              >
+                drop-off reduced
+              </div>
+            </div>
+            <div
+              style="
+                background: var(--bg);
+                border: 1px solid var(--border);
+                border-radius: 10px;
+                padding: 14px;
+                text-align: center;
+              "
+            >
+              <div
+                style="
+                  font-family: &quot;Playfair Display&quot;, serif;
+                  font-size: 24px;
+                  color: var(--teal);
+                  line-height: 1;
+                "
+              >
+                4 min
+              </div>
+              <div
+                style="
+                  font-size: 11px;
+                  color: var(--text-muted);
+                  margin-top: 4px;
+                  font-weight: 300;
+                "
+              >
+                avg booking time
+              </div>
+            </div>
+            <div
+              style="
+                background: var(--bg);
+                border: 1px solid var(--border);
+                border-radius: 10px;
+                padding: 14px;
+                text-align: center;
+              "
+            >
+              <div
+                style="
+                  font-family: &quot;Playfair Display&quot;, serif;
+                  font-size: 24px;
+                  color: var(--teal);
+                  line-height: 1;
+                "
+              >
+                82%
+              </div>
+              <div
+                style="
+                  font-size: 11px;
+                  color: var(--text-muted);
+                  margin-top: 4px;
+                  font-weight: 300;
+                "
+              >
+                1st-attempt success
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- OVERVIEW -->
+    <section class="section" id="overview">
+      <div class="section-inner">
+        <div class="section-label">Project overview</div>
+        <h2 class="section-title">The challenge</h2>
+        <p class="section-body">
+          A telemedicine startup had built a doctor booking platform but was
+          experiencing a 64% drop-off rate during the booking flow. Users were
+          starting the process and abandoning before confirming appointments.
+          The business was losing patients at the most critical conversion point
+          — not because they didn't want to book, but because the experience
+          lost their trust.
+        </p>
+        <div
+          style="
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1px;
+            background: var(--border);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            overflow: hidden;
+            margin-top: 48px;
+          "
+        >
+          <div style="background: white; padding: 28px 24px">
+            <label
+              style="
+                display: block;
+                font-size: 11px;
+                letter-spacing: 0.1em;
+                text-transform: uppercase;
+                color: var(--text-light);
+                margin-bottom: 10px;
+                font-weight: 700;
+              "
+              >Project type</label
+            ><span style="font-size: 15px; color: var(--text); font-weight: 300"
+              >Web platform redesign</span
+            >
+          </div>
+          <div style="background: white; padding: 28px 24px">
+            <label
+              style="
+                display: block;
+                font-size: 11px;
+                letter-spacing: 0.1em;
+                text-transform: uppercase;
+                color: var(--text-light);
+                margin-bottom: 10px;
+                font-weight: 700;
+              "
+              >My role</label
+            ><span style="font-size: 15px; color: var(--text); font-weight: 300"
+              >UX Research, IA, Wireframes, Hi-fi, Testing</span
+            >
+          </div>
+          <div style="background: white; padding: 28px 24px">
+            <label
+              style="
+                display: block;
+                font-size: 11px;
+                letter-spacing: 0.1em;
+                text-transform: uppercase;
+                color: var(--text-light);
+                margin-bottom: 10px;
+                font-weight: 700;
+              "
+              >Timeline</label
+            ><span style="font-size: 15px; color: var(--text); font-weight: 300"
+              >8 weeks · 2024</span
+            >
+          </div>
+          <div style="background: white; padding: 28px 24px">
+            <label
+              style="
+                display: block;
+                font-size: 11px;
+                letter-spacing: 0.1em;
+                text-transform: uppercase;
+                color: var(--text-light);
+                margin-bottom: 10px;
+                font-weight: 700;
+              "
+              >Domain</label
+            ><span style="font-size: 15px; color: var(--text); font-weight: 300"
+              >Healthtech · Telemedicine</span
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- PROBLEM -->
+    <section class="section section-alt" id="problem">
+      <div class="section-inner">
+        <div class="section-label">01 — Problem</div>
+        <h2 class="section-title">A product that drove<br />patients away</h2>
+        <div class="problem-layout">
+          <div class="stats-col">
+            <p class="section-body" style="margin-bottom: 40px">
+              The original platform had good intentions but poor execution.
+              Patients arrived, started booking, and left — not because they
+              changed their mind about seeing a doctor, but because the product
+              failed to earn their trust at the critical moment.
+            </p>
+            <div class="stat-block">
+              <div class="num">64%</div>
+              <div class="label">
+                drop-off rate before confirming an appointment on the original
+                platform
+              </div>
+            </div>
+            <div class="stat-block">
+              <div class="num">11 min</div>
+              <div class="label">
+                average time to complete the original 9-step booking process
+              </div>
+            </div>
+            <div class="stat-block">
+              <div class="num">9 steps</div>
+              <div class="label">
+                required before a patient could confirm a single appointment
+              </div>
+            </div>
+          </div>
+          <div class="problem-statement">
+            <div class="ps-label">Problem statement</div>
+            <p class="ps-text">
+              "First-time patients attempting to book a telemedicine appointment
+              are abandoning the process mid-flow because the booking steps feel
+              confusing, impersonal, and untrustworthy — leading to a 64%
+              drop-off rate and lost healthcare access."
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- RESEARCH -->
+    <section class="section" id="research">
+      <div class="section-inner">
+        <div class="section-label">02 — Research</div>
+        <h2 class="section-title">
+          Finding the real reasons<br />patients left
+        </h2>
+        <p class="section-body">
+          I ran 5 moderated usability tests on the existing platform, conducted
+          8 user interviews about digital trust in healthcare, and performed a
+          heuristic evaluation against Nielsen's 10 usability principles.
+        </p>
+        <div class="research-grid">
+          <div class="insight-card">
+            <div class="ic-type">Interview finding</div>
+            <div class="ic-label">The trust gap</div>
+            <div class="ic-quote">
+              "I don't know if this doctor is real. There's just a name and a
+              price. How do I know they're actually qualified?"
+            </div>
+          </div>
+          <div class="insight-card">
+            <div class="ic-type">Usability test finding</div>
+            <div class="ic-label">Form overload before value</div>
+            <div class="ic-quote">
+              "It asked for my insurance, GP details, allergies, and emergency
+              contact before I could even see available appointment times."
+            </div>
+          </div>
+          <div class="insight-card">
+            <div class="ic-type">Usability test finding</div>
+            <div class="ic-label">Timezone confusion</div>
+            <div class="ic-quote">
+              "The calendar showed available slots but it was unclear if the
+              times were in my timezone or the doctor's. I didn't want to show
+              up at the wrong hour."
+            </div>
+          </div>
+          <div class="insight-card">
+            <div class="ic-type">Interview finding</div>
+            <div class="ic-label">No progress visibility</div>
+            <div class="ic-quote">
+              "I filled in three pages and had no idea how many more there were.
+              I gave up because I couldn't see the end."
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- DEFINE -->
+    <section class="section section-alt" id="define">
+      <div class="section-inner">
+        <div class="section-label">03 — Define</div>
+        <h2 class="section-title">
+          Two very different users,<br />one shared frustration
+        </h2>
+        <p class="section-body">
+          Research revealed two distinct user types with different needs but the
+          same core barrier: they couldn't trust the platform enough to complete
+          a booking.
+        </p>
+        <div class="persona-grid">
+          <div class="persona-card">
+            <div class="pc-top">
+              <div class="pc-avatar av-teal">RP</div>
+              <div>
+                <div class="pc-name">Rohan Priyantha, 48</div>
+                <div class="pc-role">
+                  School principal · Kandy · rarely visits physical clinics,
+                  first-time telemedicine user, cautious with technology
+                </div>
+              </div>
+            </div>
+            <div class="pc-body">
+              <div>
+                <div class="pc-col-title">Goals</div>
+                <ul class="pc-list">
+                  <li>Get a prescription renewed quickly</li>
+                  <li>Avoid taking time off work for a clinic</li>
+                  <li>Find a trusted, qualified doctor</li>
+                </ul>
+              </div>
+              <div>
+                <div class="pc-col-title">Frustrations</div>
+                <ul class="pc-list">
+                  <li>Doesn't trust platforms he doesn't recognise</li>
+                  <li>Dislikes giving personal info upfront</li>
+                  <li>Anxious about technology going wrong mid-consultation</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="persona-card">
+            <div class="pc-top">
+              <div class="pc-avatar av-navy">AF</div>
+              <div>
+                <div class="pc-name">Amara Fernando, 29</div>
+                <div class="pc-role">
+                  Software developer · Colombo · tech-savvy, time-poor, uses
+                  online services for everything but expects speed
+                </div>
+              </div>
+            </div>
+            <div class="pc-body">
+              <div>
+                <div class="pc-col-title">Goals</div>
+                <ul class="pc-list">
+                  <li>Book an appointment in under 5 minutes</li>
+                  <li>See a doctor the same or next day</li>
+                  <li>Not have to deal with phone calls</li>
+                </ul>
+              </div>
+              <div>
+                <div class="pc-col-title">Frustrations</div>
+                <ul class="pc-list">
+                  <li>Slow, multi-step booking flows</li>
+                  <li>Forced account creation before anything</li>
+                  <li>Unclear cancellation and refund policies</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- HMW -->
+        <div style="margin-top: 64px">
+          <div class="section-label">How might we</div>
+          <h2 class="section-title" style="font-size: 32px">
+            Reframing problems as opportunities
+          </h2>
+          <div class="hmw-grid">
+            <div class="hmw-card">
+              <div class="hmw-tag">How might we</div>
+              <div class="hmw-text">
+                Build enough trust in a doctor's profile that users feel
+                confident booking within 2 minutes of arriving on the page?
+              </div>
+            </div>
+            <div class="hmw-card">
+              <div class="hmw-tag">How might we</div>
+              <div class="hmw-text">
+                Restructure the form so users only give information at the
+                moment it becomes needed — not all at the very beginning?
+              </div>
+            </div>
+            <div class="hmw-card">
+              <div class="hmw-tag">How might we</div>
+              <div class="hmw-text">
+                Make booking a doctor feel as transparent and trustworthy as
+                booking a flight — with clear steps, prices, and policies?
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- FLOW -->
+    <section class="section" id="flow">
+      <div class="section-inner">
+        <div class="section-label">04 — User Flow</div>
+        <h2 class="section-title">
+          Redesigning the booking<br />journey from 9 steps to 5
+        </h2>
+        <p class="section-body">
+          The original flow front-loaded all information collection before
+          giving the user anything. I applied progressive disclosure — only
+          asking for information at the moment it becomes relevant — to cut the
+          flow nearly in half.
+        </p>
+        <div class="flow-wrapper">
+          <div class="flow-compare">
+            <div>
+              <div style="margin-bottom: 16px">
+                <span class="fc-badge before">Before — 9 steps</span>
+              </div>
+              <div class="fc-steps">
+                <div class="fc-step old">1. Search doctors</div>
+                <div class="fc-step old eliminated">
+                  2. Mandatory account creation
+                </div>
+                <div class="fc-step old">3. Choose doctor</div>
+                <div class="fc-step old eliminated">
+                  4. Enter insurance details
+                </div>
+                <div class="fc-step old eliminated">
+                  5. Add GP referral info
+                </div>
+                <div class="fc-step old eliminated">
+                  6. Enter emergency contact
+                </div>
+                <div class="fc-step old">7. Pick time slot</div>
+                <div class="fc-step old eliminated">
+                  8. Enter allergies &amp; medical history
+                </div>
+                <div class="fc-step old">9. Confirm &amp; pay</div>
+              </div>
+              <div
+                style="
+                  margin-top: 16px;
+                  font-size: 12px;
+                  color: var(--text-muted);
+                  font-weight: 300;
+                "
+              >
+                Strikethrough steps = eliminated or moved post-booking
+              </div>
+            </div>
+            <div class="fc-vs">vs</div>
+            <div>
+              <div style="margin-bottom: 16px">
+                <span class="fc-badge after">After — 5 steps</span>
+              </div>
+              <div class="fc-steps">
+                <div class="fc-step new">1. Search by symptom or specialty</div>
+                <div class="fc-step new">2. View trusted doctor profile</div>
+                <div class="fc-step new">3. Pick available time slot</div>
+                <div class="fc-step new">
+                  4. Enter name + reason (2 fields only)
+                </div>
+                <div class="fc-step new">5. Confirm — receive video link</div>
+              </div>
+              <div
+                style="
+                  margin-top: 16px;
+                  font-size: 12px;
+                  color: var(--teal);
+                  font-weight: 400;
+                "
+              >
+                Additional info collected after appointment is confirmed
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- DESIGN SOLUTIONS -->
+    <section class="section section-alt" id="design">
+      <div class="section-inner">
+        <div class="section-label">05 — Design Solutions</div>
+        <h2 class="section-title">Key design decisions</h2>
+        <div class="sol-grid">
+          <div class="sol-card">
+            <div class="sol-icon-box">🩺</div>
+            <div>
+              <div class="sol-title">Rich, trust-building doctor profiles</div>
+              <div class="sol-desc">
+                Each doctor's profile includes a short video introduction, a
+                verified badge linked to medical board registration,
+                plain-English specialty descriptions, and 3 genuine patient
+                reviews — all before the user is asked to take any action.
+              </div>
+            </div>
+          </div>
+          <div class="sol-card">
+            <div class="sol-icon-box">📍</div>
+            <div>
+              <div class="sol-title">Persistent progress indicator</div>
+              <div class="sol-desc">
+                A "Step 2 of 5" bar is shown at the top of every screen in the
+                booking flow. Users always know exactly where they are and how
+                many steps remain — directly addressing the "I don't know when
+                this ends" abandonment pattern.
+              </div>
+            </div>
+          </div>
+          <div class="sol-card">
+            <div class="sol-icon-box">🌍</div>
+            <div>
+              <div class="sol-title">Auto timezone detection</div>
+              <div class="sol-desc">
+                The calendar automatically displays all times in the user's
+                detected local timezone, with a small tooltip confirming it.
+                This eliminated the timezone confusion that was causing users to
+                second-guess their selection.
+              </div>
+            </div>
+          </div>
+          <div class="sol-card">
+            <div class="sol-icon-box">👤</div>
+            <div>
+              <div class="sol-title">Guest booking — no forced account</div>
+              <div class="sol-desc">
+                Mandatory account creation before seeing available slots was
+                removed entirely. Users book as a guest with just a name and
+                reason. An account can optionally be created after the first
+                appointment is completed.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Desktop screens SVG -->
+        <div
+          style="
+            margin-top: 48px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+          "
+        >
+          <!-- Doctor profile screen -->
+          <div class="desktop-preview">
+            <div class="desktop-topbar">
+              <div class="db-dot db-red"></div>
+              <div class="db-dot db-yellow"></div>
+              <div class="db-dot db-green"></div>
+              <span style="font-size: 11px; color: #8aa0ae; margin-left: 8px"
+                >Doctor profile</span
+              >
+            </div>
+            <svg
+              viewBox="0 0 420 280"
+              xmlns="http://www.w3.org/2000/svg"
+              style="width: 100%; display: block"
+            >
+              <rect width="420" height="280" fill="#f4faf8" />
+              <!-- Step indicator -->
+              <rect
+                x="0"
+                y="0"
+                width="420"
+                height="28"
+                fill="white"
+                stroke="#d6e8e5"
+                stroke-width="0"
+                style="border-bottom: 1px solid #d6e8e5"
+              />
+              <text
+                x="16"
+                y="17"
+                fill="#8aa0ae"
+                font-family="Lato,sans-serif"
+                font-size="9"
+                font-weight="300"
+              >
+                Step 2 of 5 — Review doctor
+              </text>
+              <rect
+                x="16"
+                y="22"
+                width="336"
+                height="3"
+                rx="1.5"
+                fill="#d6e8e5"
+              />
+              <rect
+                x="16"
+                y="22"
+                width="84"
+                height="3"
+                rx="1.5"
+                fill="#0d7b6e"
+              />
+              <!-- Doctor card -->
+              <rect
+                x="16"
+                y="36"
+                width="200"
+                height="230"
+                rx="12"
+                fill="white"
+                stroke="#d6e8e5"
+                stroke-width="1"
+              />
+              <!-- Video preview area -->
+              <rect
+                x="24"
+                y="44"
+                width="184"
+                height="90"
+                rx="8"
+                fill="#e0f5f2"
+              />
+              <circle cx="116" cy="89" r="18" fill="white" opacity="0.8" />
+              <text
+                x="108"
+                y="95"
+                fill="#0d7b6e"
+                font-family="Lato,sans-serif"
+                font-size="14"
+              >
+                ▶
+              </text>
+              <text
+                x="60"
+                y="58"
+                fill="#0d7b6e"
+                font-family="Lato,sans-serif"
+                font-size="9"
+                font-weight="700"
+              >
+                ▶ Watch intro (45 sec)
+              </text>
+              <!-- Doctor info -->
+              <rect
+                x="24"
+                y="143"
+                width="46"
+                height="16"
+                rx="8"
+                fill="#e0f5f2"
+              />
+              <text
+                x="30"
+                y="154"
+                fill="#0d7b6e"
+                font-family="Lato,sans-serif"
+                font-size="8"
+                font-weight="700"
+              >
+                ✓ Verified MD
+              </text>
+              <text
+                x="24"
+                y="174"
+                fill="#0e2432"
+                font-family="Lato,sans-serif"
+                font-size="13"
+                font-weight="700"
+              >
+                Dr. Ruwan Perera
+              </text>
+              <text
+                x="24"
+                y="188"
+                fill="#4a6070"
+                font-family="Lato,sans-serif"
+                font-size="10"
+                font-weight="300"
+              >
+                General Physician · 12 yrs experience
+              </text>
+              <text
+                x="24"
+                y="200"
+                fill="#4a6070"
+                font-family="Lato,sans-serif"
+                font-size="10"
+                font-weight="300"
+              >
+                ★★★★★ 4.8 · 142 reviews
+              </text>
+              <!-- Reviews -->
+              <rect
+                x="24"
+                y="210"
+                width="184"
+                height="28"
+                rx="6"
+                fill="#f4faf8"
+                stroke="#d6e8e5"
+                stroke-width="0.5"
+              />
+              <text
+                x="32"
+                y="222"
+                fill="#0e2432"
+                font-family="Lato,sans-serif"
+                font-size="9"
+                font-weight="700"
+              >
+                "Very thorough and patient"
+              </text>
+              <text
+                x="32"
+                y="232"
+                fill="#8aa0ae"
+                font-family="Lato,sans-serif"
+                font-size="8"
+                font-weight="300"
+              >
+                — Kasun M. · 3 days ago
+              </text>
+              <!-- Booking panel -->
+              <rect
+                x="228"
+                y="36"
+                width="176"
+                height="230"
+                rx="12"
+                fill="white"
+                stroke="#d6e8e5"
+                stroke-width="1"
+              />
+              <text
+                x="242"
+                y="58"
+                fill="#0e2432"
+                font-family="Lato,sans-serif"
+                font-size="12"
+                font-weight="700"
+              >
+                Choose a time
+              </text>
+              <text
+                x="242"
+                y="70"
+                fill="#8aa0ae"
+                font-family="Lato,sans-serif"
+                font-size="9"
+                font-weight="300"
+              >
+                Times shown in your timezone (GMT+5:30)
+              </text>
+              <!-- Time slots grid -->
+              <rect
+                x="238"
+                y="78"
+                width="52"
+                height="22"
+                rx="6"
+                fill="#0d7b6e"
+              />
+              <text
+                x="248"
+                y="92"
+                fill="white"
+                font-family="Lato,sans-serif"
+                font-size="9"
+                font-weight="700"
+              >
+                3:00 PM
+              </text>
+              <rect
+                x="296"
+                y="78"
+                width="52"
+                height="22"
+                rx="6"
+                fill="white"
+                stroke="#d6e8e5"
+                stroke-width="1"
+              />
+              <text
+                x="306"
+                y="92"
+                fill="#4a6070"
+                font-family="Lato,sans-serif"
+                font-size="9"
+                font-weight="300"
+              >
+                4:00 PM
+              </text>
+              <rect
+                x="238"
+                y="106"
+                width="52"
+                height="22"
+                rx="6"
+                fill="white"
+                stroke="#d6e8e5"
+                stroke-width="1"
+              />
+              <text
+                x="248"
+                y="120"
+                fill="#4a6070"
+                font-family="Lato,sans-serif"
+                font-size="9"
+                font-weight="300"
+              >
+                5:30 PM
+              </text>
+              <rect
+                x="296"
+                y="106"
+                width="52"
+                height="22"
+                rx="6"
+                fill="white"
+                stroke="#d6e8e5"
+                stroke-width="1"
+              />
+              <text
+                x="306"
+                y="120"
+                fill="#4a6070"
+                font-family="Lato,sans-serif"
+                font-size="9"
+                font-weight="300"
+              >
+                6:00 PM
+              </text>
+              <!-- Price -->
+              <rect
+                x="238"
+                y="136"
+                width="110"
+                height="1"
+                rx="1"
+                fill="#d6e8e5"
+              />
+              <text
+                x="238"
+                y="154"
+                fill="#8aa0ae"
+                font-family="Lato,sans-serif"
+                font-size="9"
+                font-weight="300"
+              >
+                Consultation fee
+              </text>
+              <text
+                x="238"
+                y="168"
+                fill="#0e2432"
+                font-family="Lato,sans-serif"
+                font-size="14"
+                font-weight="700"
+              >
+                LKR 1,500
+              </text>
+              <text
+                x="238"
+                y="180"
+                fill="#8aa0ae"
+                font-family="Lato,sans-serif"
+                font-size="9"
+                font-weight="300"
+              >
+                30-min video call · Free cancellation
+              </text>
+              <!-- Book CTA -->
+              <rect
+                x="238"
+                y="196"
+                width="152"
+                height="32"
+                rx="8"
+                fill="#0d7b6e"
+              />
+              <text
+                x="268"
+                y="216"
+                fill="white"
+                font-family="Lato,sans-serif"
+                font-size="11"
+                font-weight="700"
+              >
+                Book this slot →
+              </text>
+              <text
+                x="238"
+                y="234"
+                fill="#8aa0ae"
+                font-family="Lato,sans-serif"
+                font-size="9"
+                font-weight="300"
+              >
+                Or continue as guest — no account needed
+              </text>
+              <text
+                x="238"
+                y="252"
+                fill="#0d7b6e"
+                font-family="Lato,sans-serif"
+                font-size="9"
+                font-weight="700"
+              >
+                Book without creating an account ↗
+              </text>
+            </svg>
+          </div>
+          <!-- Confirmation screen -->
+          <div class="desktop-preview">
+            <div class="desktop-topbar">
+              <div class="db-dot db-red"></div>
+              <div class="db-dot db-yellow"></div>
+              <div class="db-dot db-green"></div>
+              <span style="font-size: 11px; color: #8aa0ae; margin-left: 8px"
+                >Booking confirmed</span
+              >
+            </div>
+            <svg
+              viewBox="0 0 420 280"
+              xmlns="http://www.w3.org/2000/svg"
+              style="width: 100%; display: block"
+            >
+              <rect width="420" height="280" fill="#f4faf8" />
+              <!-- Full step bar complete -->
+              <rect x="0" y="0" width="420" height="28" fill="white" />
+              <text
+                x="16"
+                y="17"
+                fill="#0d7b6e"
+                font-family="Lato,sans-serif"
+                font-size="9"
+                font-weight="700"
+              >
+                Step 5 of 5 — Booking confirmed!
+              </text>
+              <rect
+                x="16"
+                y="22"
+                width="336"
+                height="3"
+                rx="1.5"
+                fill="#0d7b6e"
+              />
+              <!-- Success area -->
+              <circle cx="210" cy="85" r="36" fill="#e0f5f2" />
+              <text
+                x="195"
+                y="93"
+                fill="#0d7b6e"
+                font-family="Lato,sans-serif"
+                font-size="28"
+                font-weight="700"
+              >
+                ✓
+              </text>
+              <text
+                x="210"
+                y="136"
+                text-anchor="middle"
+                fill="#0e2432"
+                font-family="Lato,sans-serif"
+                font-size="14"
+                font-weight="700"
+              >
+                Appointment confirmed!
+              </text>
+              <text
+                x="210"
+                y="152"
+                text-anchor="middle"
+                fill="#4a6070"
+                font-family="Lato,sans-serif"
+                font-size="11"
+                font-weight="300"
+              >
+                Dr. Ruwan Perera · Today at 3:00 PM
+              </text>
+              <!-- Details card -->
+              <rect
+                x="60"
+                y="164"
+                width="300"
+                height="64"
+                rx="10"
+                fill="white"
+                stroke="#d6e8e5"
+                stroke-width="1"
+              />
+              <text
+                x="80"
+                y="182"
+                fill="#8aa0ae"
+                font-family="Lato,sans-serif"
+                font-size="9"
+                font-weight="300"
+              >
+                Your video link
+              </text>
+              <text
+                x="80"
+                y="196"
+                fill="#0d7b6e"
+                font-family="Lato,sans-serif"
+                font-size="10"
+                font-weight="700"
+              >
+                medibook.lk/join/xk7p2q
+              </text>
+              <text
+                x="80"
+                y="210"
+                fill="#8aa0ae"
+                font-family="Lato,sans-serif"
+                font-size="9"
+                font-weight="300"
+              >
+                Also sent to your email and SMS
+              </text>
+              <rect
+                x="316"
+                y="172"
+                width="32"
+                height="20"
+                rx="5"
+                fill="#e0f5f2"
+              />
+              <text
+                x="321"
+                y="185"
+                fill="#0d7b6e"
+                font-family="Lato,sans-serif"
+                font-size="8"
+                font-weight="700"
+              >
+                Copy
+              </text>
+              <!-- Action buttons -->
+              <rect
+                x="76"
+                y="240"
+                width="120"
+                height="28"
+                rx="8"
+                fill="#0d7b6e"
+              />
+              <text
+                x="100"
+                y="257"
+                fill="white"
+                font-family="Lato,sans-serif"
+                font-size="10"
+                font-weight="700"
+              >
+                Add to calendar
+              </text>
+              <rect
+                x="208"
+                y="240"
+                width="136"
+                height="28"
+                rx="8"
+                fill="white"
+                stroke="#d6e8e5"
+                stroke-width="1"
+              />
+              <text
+                x="230"
+                y="257"
+                fill="#0e2432"
+                font-family="Lato,sans-serif"
+                font-size="10"
+                font-weight="400"
+              >
+                View appointment
+              </text>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- TESTING -->
+    <section class="section" id="testing">
+      <div class="section-inner">
+        <div class="section-label">06 — Testing &amp; Iteration</div>
+        <h2 class="section-title">
+          Two rounds, two sets of<br />problems solved
+        </h2>
+        <p class="section-body">
+          I ran moderated usability tests with 6 participants via Lookback,
+          using a Figma prototype. Each session covered 3 core tasks: find a
+          doctor, book an appointment, and retrieve the video link after
+          confirming.
+        </p>
+        <div class="test-layout">
+          <div class="test-card fail">
+            <div class="tc-tag">✕ Round 1 — Issue found</div>
+            <div class="tc-text">
+              Users missed the "Guest booking" option entirely. It was placed
+              below the account creation form as a small secondary link —
+              visually hidden from most participants.
+            </div>
+          </div>
+          <div class="test-card fix">
+            <div class="tc-tag">✓ Fix applied</div>
+            <div class="tc-text">
+              Moved guest booking above the account creation form and gave it
+              equal visual weight. Guest bookings in testing rose from 20% to
+              71% of participants choosing that path.
+            </div>
+          </div>
+          <div class="test-card fail">
+            <div class="tc-tag">✕ Round 1 — Issue found</div>
+            <div class="tc-text">
+              The confirmation screen felt too plain — 2 of 6 users asked "Did
+              it actually book?" and tried tapping the confirm button again,
+              generating duplicate bookings in the test environment.
+            </div>
+          </div>
+          <div class="test-card fix">
+            <div class="tc-tag">✓ Fix applied</div>
+            <div class="tc-text">
+              Added an animated confirmation checkmark, prominent doctor name
+              and time, and an "Add to calendar" button. Zero duplicate booking
+              attempts occurred in round 2 testing.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- OUTCOMES -->
+    <section class="section section-alt" id="outcomes">
+      <div class="section-inner">
+        <div class="section-label">07 — Outcomes</div>
+        <h2 class="section-title">Results</h2>
+        <div class="outcomes-row">
+          <div class="oc-card">
+            <div class="oc-num">58%</div>
+            <div class="oc-label">
+              reduction in booking drop-off rate during prototype testing
+            </div>
+          </div>
+          <div class="oc-card">
+            <div class="oc-num">4 min</div>
+            <div class="oc-label">
+              average booking completion time, down from 11 minutes
+            </div>
+          </div>
+          <div class="oc-card">
+            <div class="oc-num">82%</div>
+            <div class="oc-label">
+              of participants completed booking successfully on first attempt
+            </div>
+          </div>
+          <div class="oc-card">
+            <div class="oc-num">4.7★</div>
+            <div class="oc-label">
+              average usability score across 6 test participants in round 2
+            </div>
+          </div>
+        </div>
+        <div class="quote-block">
+          <div class="quote-text">
+            "This actually feels like a real medical service. The doctor's video
+            introduction made a huge difference — I trusted them before even
+            reading the reviews."
+          </div>
+          <div class="quote-attr">— Usability test participant, Round 2</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- LEARNINGS -->
+    <section class="section" id="learnings">
+      <div class="section-inner">
+        <div class="section-label">08 — Key Learnings</div>
+        <h2 class="section-title">What this project<br />taught me</h2>
+        <div class="learnings">
+          <div class="learning">
+            <div class="l-num">01</div>
+            <div>
+              <div class="l-title">
+                Trust must be earned before you ask for anything
+              </div>
+              <div class="l-text">
+                In healthcare especially, users will not share personal
+                information with a platform they don't yet trust. The single
+                most impactful design decision in this project was the doctor's
+                video introduction — it converted a name on a screen into a
+                real, qualified human being. A great profile page does more for
+                conversion than a streamlined checkout flow.
+              </div>
+            </div>
+          </div>
+          <div class="learning">
+            <div class="l-num">02</div>
+            <div>
+              <div class="l-title">
+                Progressive disclosure is one of the highest-leverage UX tools
+              </div>
+              <div class="l-text">
+                Asking for information only at the moment it becomes relevant
+                cut the booking flow from 9 steps to 5, and reduced completion
+                time by more than half. Every extra form field is a potential
+                exit. The guiding question throughout ideation was: "Does the
+                user need to give this now, or can it wait?"
+              </div>
+            </div>
+          </div>
+          <div class="learning">
+            <div class="l-num">03</div>
+            <div>
+              <div class="l-title">
+                The confirmation screen is not the end of the experience
+              </div>
+              <div class="l-text">
+                A plain "booking confirmed" page left users anxious and
+                uncertain. The confirmation screen is a critical moment of
+                emotional resolution — users need to feel certain, reassured,
+                and equipped with what comes next. Fixing the confirmation
+                screen eliminated all duplicate booking attempts in round 2
+                testing without changing anything else in the flow.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="footer-name">Ahlaan imamdeen</div>
+      <p>UX Designer · Available for opportunities · yourname@email.com</p>
+      <p style="margin-top: 24px; font-size: 12px; opacity: 0.3">
+        Case Study 02 of 02 — MediBook Telemedicine Platform · 2024
+      </p>
+    </footer>
+  </body>
+</html>
