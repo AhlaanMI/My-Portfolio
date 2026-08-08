@@ -18,9 +18,10 @@ function App() {
       <Navbar />
       <main>
         <Hero />
-        <SelectedWork />
         <About />
         <Experience />
+
+        <SelectedWork />
         <Capabilities />
         <Flowstack />
         <Process />
