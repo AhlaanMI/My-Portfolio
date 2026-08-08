@@ -1,7 +1,7 @@
 {
   "name": "Ahlaan-portfolio",
   "version": "0.1.0",
-  "homepage": "/",
+  "homepage": "https://ahlaanmi.github.io/My-Portfolio/",
   "private": true,
   "dependencies": {
     "@emailjs/browser": "^3.12.1",
