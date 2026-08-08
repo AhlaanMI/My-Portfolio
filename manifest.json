@@ -1,0 +1,15 @@
+{
+  "short_name": "Ahlaan",
+  "name": "Ahlaan Imamdeen — Full-Stack Software Engineer",
+  "icons": [
+    {
+      "src": "favicon.jpg",
+      "sizes": "192x192",
+      "type": "image/jpeg"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#08090d",
+  "background_color": "#08090d"
+}
