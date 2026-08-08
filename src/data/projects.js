@@ -1,50 +1,144 @@
 export const projectsData = [
   {
-    id: 1,
-    name: "Flowstack",
-    subtitle: "Web & Software Solutions Platform",
-    description:
-      "Freelance web development practice delivering production-ready websites. Full lifecycle from requirements gathering, UI design, development, deployment, and SEO optimization.",
-    tags: ["Freelance", "Web Dev", "Client Projects", "SEO"],
-    duration: "Dec 2025 – Present",
-    github: null,
-    liveDemo: "https://flowstack.ink",
-    image: null,
+    id: "flowstack-agency-os",
+    title: "FlowStack Agency OS",
+    subtitle: "Internal operating system for my agency",
+    category: "featured",
+    year: "2025 — Present",
+    summary:
+      "An internal operating system built to manage clients, projects, content and finances for Flowstack. A continuously evolving system used in daily agency operations.",
+    role: "Creator · Designer · Developer",
+    outcome:
+      "Replaced scattered spreadsheets and messages with a single system that runs the agency's day-to-day operations.",
+    challenge:
+      "Turning a one-person agency workflow into structured client, project and financial tracking without adding overhead.",
+    features: [
+      "Client management",
+      "Project management",
+      "Workflow tracking",
+      "Content & finance overview",
+    ],
+    tags: ["Product", "Internal tool", "Agency operations"],
+    stack: ["Next.js", "TypeScript", "Auth", "State management", "Database"],
+    image: "/images/flowstack-agency-os.svg",
+    liveUrl: "https://flowstack.ink",
+    github: "",
   },
   {
-    id: 2,
-    name: "Automile",
+    id: "pharmacy-pos",
+    title: "Pharmacy POS",
+    subtitle: "Customized point-of-sale system",
+    category: "secondary",
+    year: "2026",
+    summary:
+      "A pharmacy point-of-sale system with domain-specific functionality such as expiry tracking, low-stock alerts and multi-user roles.",
+    role: "Analyst · Developer",
+    outcome:
+      "Customized and extended an existing POS foundation with pharmacy-specific workflows and designed a web-based POS concept.",
+    challenge:
+      "Adapting a general POS to the real constraints of a pharmacy — expiry, stock and role-based access.",
+    features: [
+      "Expiry tracking",
+      "Low-stock alerts",
+      "Multi-user roles",
+      "Web-based concept design",
+    ],
+    tags: ["Customized from PharmaSpot", "Electron", "Web concept"],
+    stack: ["Electron", "JavaScript", "Database", "UI design"],
+    image: "/images/pharmacy-pos.svg",
+    liveUrl: "",
+    github: "",
+  },
+  {
+    id: "automile",
+    title: "Automile",
     subtitle: "AI-Powered Vehicle Advisory Chatbot",
-    description:
-      "AI chatbot for IoT-driven vehicle lifecycle optimization. Final year research project achieving ~98% accuracy in identifying vehicle issues using machine learning.",
-    tags: ["Python", "TensorFlow", "Flask", "NLP", "AI/ML"],
-    duration: "Jul 2024 – Jun 2025",
-    github: "https://github.com/AhlaanMI",
-    liveDemo: "https://automile-landing-page-main.vercel.app/",
-    image: null,
+    category: "secondary",
+    year: "2024 — 2025",
+    summary:
+      "Final-year research project focused on IoT-driven vehicle lifecycle optimization, featuring an AI-powered vehicle advisory chatbot.",
+    role: "Researcher · ML Engineer · Developer",
+    outcome:
+      "Achieved ~98% accuracy in identifying vehicle issues and recommending maintenance actions, evaluated through structured testing.",
+    challenge:
+      "Working with noisy real-world mechanic data and improving domain-specific NLP recommendation quality while reducing false positives and negatives.",
+    features: [
+      "Mechanics' diagnostic process modeling",
+      "Domain-specific NLP",
+      "Recommendation engine",
+      "Structured evaluation",
+    ],
+    tags: ["Research", "AI/ML", "NLP", "IoT"],
+    stack: ["Python", "TensorFlow", "Flask", "NLP", "ML"],
+    image: "/images/automile.svg",
+    liveUrl: "https://automile-landing-page-main.vercel.app/",
+    github: "",
   },
   {
-    id: 3,
-    name: "Vehicle Marketplace Platform",
-    subtitle: "Full-Stack Production Application",
-    description:
-      "Production-level vehicle marketplace platform. Frontend built with React.js and Next.js, backend CRUD operations with Laravel and Node.js, data management with MongoDB and Firebase.",
-    tags: ["React.js", "Next.js", "Laravel", "Node.js", "MongoDB", "Firebase"],
-    duration: "Ongoing",
-    github: "https://github.com/AhlaanMI",
-    liveDemo: null,
-    image: null,
+    id: "extreme-fitness",
+    title: "Extreme Fitness Center",
+    subtitle: "Client website · Live marketing site",
+    category: "secondary",
+    year: "2026",
+    summary:
+      "A production marketing website delivered for a real client — my first Flowstack client project.",
+    role: "Founder · Designer · Developer",
+    outcome:
+      "Deployed as a live marketing site with booking and inquiry flows designed around client goals.",
+    challenge:
+      "Delivering a conversion-focused site for a business — from design through SEO and social sharing.",
+    features: [
+      "Mobile experience",
+      "Booking / inquiry flow",
+      "SEO implementation",
+      "Open Graph & Twitter cards",
+    ],
+    tags: ["Client project", "Marketing site", "SEO"],
+    stack: ["React", "Tailwind CSS", "SEO", "Deployment"],
+    image: "/images/extreme-fitness.svg",
+    liveUrl: "",
+    github: "",
   },
   {
-    id: 4,
-    name: "Real Time Code Connect Classroom",
-    subtitle: "Collaborative Code Editor",
-    description:
-      "Real-time collaborative code editor with WebSocket synchronization, multi-user rooms, syntax highlighting, and live execution environment for collaborative learning.",
-    tags: ["React.js", "Node.js", "Socket.IO", "MongoDB", "Express.js"],
-    duration: "Aug 2025 – Sep 2025",
-    github: "https://github.com/AhlaanMI",
-    liveDemo: null,
-    image: null,
+    id: "vehicle-marketplace",
+    title: "Vehicle Marketplace",
+    subtitle: "Production engineering",
+    category: "more",
+    year: "Ongoing",
+    summary:
+      "Contributed to a production-level vehicle marketplace, developing frontend components and backend CRUD functionality.",
+    role: "Full-stack contributor",
+    outcome:
+      "Shipped production features inside a real engineering team using Agile and CI/CD.",
+    challenge: "Working within production standards — branching, reviews and deployment pipelines.",
+    features: ["Vehicle listings", "Search & filter", "User dashboard", "CRUD APIs"],
+    tags: ["Production", "Team", "Agile"],
+    stack: ["React", "Next.js", "TypeScript", "Laravel", "Node.js", "MongoDB", "Firebase"],
+    image: "/images/vehicle-marketplace.svg",
+    liveUrl: "",
+    github: "",
+  },
+  {
+    id: "code-connect",
+    title: "Real Time Code Connect",
+    subtitle: "Collaborative code editor",
+    category: "more",
+    year: "2024",
+    summary:
+      "A real-time collaborative code editor with WebSocket synchronization, multi-user rooms and syntax highlighting.",
+    role: "Solo developer",
+    outcome:
+      "Delivered a working multi-user collaboration product with live sync and presence tracking.",
+    challenge: "Designing reliable real-time state synchronization across concurrent users.",
+    features: ["Live code sync", "Rooms & presence", "Syntax highlighting", "REST APIs"],
+    tags: ["Product", "Real-time"],
+    stack: ["React", "Node.js", "Socket.IO", "MongoDB", "Express"],
+    image: "/images/code-connect.svg",
+    liveUrl: "",
+    github: "https://github.com/AhlaanMI/CCC",
   },
 ];
+
+export const featuredProject = projectsData.find((p) => p.category === "featured");
+export const secondaryProjects = projectsData.filter((p) => p.category === "secondary");
+export const moreProjects = projectsData.filter((p) => p.category === "more");

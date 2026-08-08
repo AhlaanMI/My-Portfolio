@@ -1,38 +1,26 @@
 export const skillsData = [
   {
-    category: "Frontend",
-    skills: [
-      "React.js",
-      "Next.js",
-      "TypeScript",
-      "JavaScript (ES6+)",
-      "HTML5",
-      "CSS3",
-      "Tailwind CSS",
-      "Responsive Design",
-      "Figma",
-    ],
+    category: "Core",
+    skills: ["React.js", "Next.js", "TypeScript", "JavaScript (ES6+)"],
   },
   {
     category: "Backend",
-    skills: [
-      "Node.js",
-      "Express.js",
-      "Laravel",
-      "REST APIs",
-      "MVC Architecture",
-    ],
+    skills: ["Node.js", "Express.js", "Laravel", "REST APIs"],
   },
   {
-    category: "Databases",
-    skills: ["MySQL", "MongoDB", "PostgreSQL", "Firebase"],
+    category: "Data",
+    skills: ["MongoDB", "MySQL", "Firebase"],
   },
   {
-    category: "DevOps & Tools",
-    skills: ["Git", "GitHub", "CI/CD", "Agile/Scrum"],
+    category: "UI",
+    skills: ["Tailwind CSS", "Material UI", "Figma"],
   },
   {
-    category: "Other",
-    skills: ["Java", "Kotlin", "DSA", "Python", "TensorFlow"],
+    category: "Infrastructure",
+    skills: ["Git", "GitHub", "CI/CD", "Vercel"],
+  },
+  {
+    category: "CMS",
+    skills: ["Sanity CMS"],
   },
 ];

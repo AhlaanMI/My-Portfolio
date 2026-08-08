@@ -1,89 +1,78 @@
 import React from "react";
-import { motion } from "framer-motion";
+import Reveal from "./Reveal";
 
-const About = () => {
-  const stats = [
-    { label: "Years Experience", value: "1.5+" },
-    { label: "Projects Built", value: "10+" },
-    { label: "Companies", value: "2" },
-    { label: "Freelance Business", value: "1" },
-  ];
+const stories = [
+  {
+    title: "Engineer",
+    text: "Production experience at IT Starter — progressing from intern to Associate Software Engineer.",
+  },
+  {
+    title: "Builder",
+    text: "10+ full-stack and AI-integrated projects, from research systems to internal products.",
+  },
+  {
+    title: "Founder",
+    text: "Flowstack, where I own the entire client lifecycle — from requirements to deployment.",
+  },
+];
 
-  return (
-    <section id="about" className="py-20 bg-dark">
-      <div className="container-custom">
-        {/* Section Heading */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="mb-16"
-        >
-          <h2 className="section-heading">
-            About Me
-            <div className="heading-underline" style={{ width: "120px" }} />
-          </h2>
-        </motion.div>
+const About = () => (
+  <section id="about" className="py-24 md:py-32 border-t border-line bg-surfaceAlt/30">
+    <div className="container-site">
+      <div className="grid lg:grid-cols-2 gap-14 lg:gap-20 items-start">
+        <Reveal>
+          <p className="eyebrow mb-3">About</p>
+          <h2 className="section-title mb-8">Engineer × Designer × Builder.</h2>
+          <div className="space-y-6 text-secondary leading-relaxed">
+            <p>
+              I'm Ahlaan, a full-stack software engineer and product builder based in Sri
+              Lanka.
+            </p>
+            <p>
+              I enjoy turning ideas into production-ready digital experiences — from
+              designing interfaces and building applications to deploying, optimizing and
+              maintaining them.
+            </p>
+            <p>
+              I've worked on production applications in Agile teams and independently
+              delivered websites and digital products for clients through Flowstack, my own
+              web development practice.
+            </p>
+            <p>
+              My strongest area sits between engineering and design: taking an idea,
+              understanding how it should feel and function, and turning it into a clean,
+              scalable product.
+            </p>
+          </div>
+        </Reveal>
 
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          {/* Left: Image Placeholder */}
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="relative"
-          >
-            <div className="aspect-square rounded-2xl bg-gradient-to-br from-cyan-500/20 to-blue-500/10 border border-slate-700/50 overflow-hidden flex items-center justify-center backdrop-blur-sm">
+        <Reveal delay={0.15}>
+          <div className="mb-10">
+            <div className="aspect-[4/5] rounded-lg border border-line overflow-hidden bg-surface">
               <img
                 src={`${process.env.PUBLIC_URL}/hero.jpg`}
-                alt="Ahlaan Imamdeen"
+                alt="Ahlaan Imamdeen — full-stack software engineer"
                 className="w-full h-full object-cover"
                 loading="lazy"
               />
             </div>
-            <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-2xl opacity-10 blur-2xl" />
-          </motion.div>
+          </div>
 
-          {/* Right: Bio & Stats */}
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <p className="text-base md:text-lg text-gray-400 mb-6 leading-relaxed">
-              Full-stack developer with 1.5+ years of experience building scalable web applications across the entire stack — from responsive React and Next.js frontends to robust Laravel and Node.js backends, with MySQL and MongoDB for data management.
-            </p>
-
-            <p className="text-base md:text-lg text-gray-400 mb-8 leading-relaxed">
-              I've contributed to production-level codebases at IT Starter and Gamage Recruiters, and I'm the founder of Flowstack, a freelance web development practice. I'm passionate about clean code, user experience, and solving complex problems.
-            </p>
-
-            {/* Stats Grid */}
-            <div className="grid grid-cols-2 gap-4">
-              {stats.map((stat, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="card-gradient p-4 rounded-lg hover:border-cyan-500/50 transition-all duration-300"
-                >
-                  <div className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent mb-2 font-heading">
-                    {stat.value}
-                  </div>
-                  <p className="text-sm text-gray-400">{stat.label}</p>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
-        </div>
+          <div className="grid gap-4">
+            {stories.map((story) => (
+              <div
+                key={story.title}
+                className="surface rounded-lg p-5 hover:border-accent/40 transition-colors duration-300"
+              >
+                <h3 className="font-heading font-bold text-white mb-1.5">{story.title}</h3>
+                <p className="text-sm text-secondary leading-relaxed">{story.text}</p>
+              </div>
+            ))}
+          </div>
+        </Reveal>
       </div>
-    </section>
-  );
-};
+    </div>
+  </section>
+);
 
 export default About;

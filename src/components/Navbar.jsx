@@ -1,122 +1,120 @@
 import React, { useState, useEffect } from "react";
 import { Link as ScrollLink } from "react-scroll";
 import { HiMenuAlt3, HiX } from "react-icons/hi";
-import { motion } from "framer-motion";
+import { FiArrowUpRight } from "react-icons/fi";
+import { site, navLinks } from "../data/site";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-
-    window.addEventListener("scroll", handleScroll);
+    const handleScroll = () => setIsScrolled(window.scrollY > 24);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const navLinks = [
-    { name: "Home", to: "hero" },
-    { name: "About", to: "about" },
-    { name: "Skills", to: "skills" },
-    { name: "Experience", to: "experience" },
-    { name: "Projects", to: "projects" },
-    { name: "Education", to: "education" },
-    { name: "Contact", to: "contact" },
-  ];
+  useEffect(() => {
+    document.body.style.overflow = isOpen ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isOpen]);
 
   return (
-    <motion.nav
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.5 }}
+    <header
       className={`fixed w-full top-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-dark/80 backdrop-blur-md border-b border-slate-700/30"
-          : "bg-transparent"
+          ? "bg-dark/85 backdrop-blur-md border-b border-line"
+          : "bg-transparent border-b border-transparent"
       }`}
     >
-      <div className="container-custom flex justify-between items-center py-4">
-        {/* Logo */}
-        <motion.div
-          whileHover={{ scale: 1.05 }}
-          className="text-2xl font-bold bg-gradient-to-r from-cyan-500 to-blue-500 bg-clip-text text-transparent font-heading"
-        >
-          Ahlaan
-        </motion.div>
+      <nav className="container-site flex items-center justify-between py-4">
+        <a href="#home" className="font-heading text-xl font-bold text-white focus-ring rounded">
+          Ahlaan<span className="text-accent">.</span>
+        </a>
 
-        {/* Desktop Menu */}
-        <div className="hidden md:flex gap-8">
+        <div className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
             <ScrollLink
               key={link.to}
               to={link.to}
               smooth={true}
               duration={500}
-              className="text-gray-300 hover:text-cyan-400 transition-colors cursor-pointer relative group text-sm font-medium"
+              offset={-72}
+              className="text-sm font-medium text-secondary hover:text-white transition-colors cursor-pointer focus-ring"
             >
-              {link.name}
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-cyan-500 to-blue-500 group-hover:w-full transition-all duration-300"></span>
+              {link.label}
             </ScrollLink>
           ))}
         </div>
 
-        {/* CTA Button */}
-        <motion.a
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          href="https://wa.me/94777326274"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="hidden md:block btn-primary text-sm"
-        >
-          WhatsApp
-        </motion.a>
+        <div className="hidden md:flex items-center gap-4">
+          {site.resume && (
+            <a
+              href={site.resume}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-ghost"
+            >
+              Resume
+              <FiArrowUpRight />
+            </a>
+          )}
+          <a href="#contact" className="btn-primary text-sm">
+            Let's Talk
+          </a>
+        </div>
 
-        {/* Mobile Menu Button */}
-        <motion.button
-          whileTap={{ scale: 0.95 }}
+        <button
           onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden text-white text-2xl"
+          aria-label={isOpen ? "Close menu" : "Open menu"}
+          className="md:hidden text-white text-2xl focus-ring"
         >
           {isOpen ? <HiX /> : <HiMenuAlt3 />}
-        </motion.button>
-      </div>
+        </button>
+      </nav>
 
-      {/* Mobile Menu */}
       {isOpen && (
-        <motion.div
-          initial={{ opacity: 0, height: 0 }}
-          animate={{ opacity: 1, height: "auto" }}
-          exit={{ opacity: 0, height: 0 }}
-          className="md:hidden bg-dark/95 backdrop-blur-md border-t border-slate-700/30 px-6 py-4"
-        >
-          <div className="flex flex-col gap-4">
+        <div className="md:hidden fixed inset-0 top-[60px] bg-dark z-40 flex flex-col justify-between px-6 py-10">
+          <div className="flex flex-col gap-6">
             {navLinks.map((link) => (
               <ScrollLink
                 key={link.to}
                 to={link.to}
                 smooth={true}
                 duration={500}
-                className="text-gray-300 hover:text-cyan-400 transition-colors cursor-pointer text-sm font-medium"
+                offset={-72}
                 onClick={() => setIsOpen(false)}
+                className="font-heading text-3xl font-bold text-white hover:text-accent transition-colors cursor-pointer"
               >
-                {link.name}
+                {link.label}
               </ScrollLink>
             ))}
+          </div>
+          <div className="flex flex-col gap-4">
+            {site.resume && (
+              <a
+                href={site.resume}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-secondary"
+              >
+                View Resume
+                <FiArrowUpRight />
+              </a>
+            )}
             <a
-              href="https://wa.me/94777326274"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-primary text-sm text-center"
+              href="#contact"
+              onClick={() => setIsOpen(false)}
+              className="btn-primary"
             >
-              WhatsApp
+              Let's Talk
             </a>
           </div>
-        </motion.div>
+        </div>
       )}
-    </motion.nav>
+    </header>
   );
 };
 

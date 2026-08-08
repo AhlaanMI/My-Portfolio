@@ -1,38 +1,89 @@
 export const experienceData = [
   {
-    company: "IT Starter (Pvt) Ltd",
-    role: "Associate Software Engineer",
+    id: "it-starter",
+    company: "IT Starter (Pvt) Ltd.",
+    location: "Colombo, Sri Lanka",
     type: "Full-time",
-    duration: "Jan 2026 – Present",
-    startDate: "2026-01",
-    highlights: [
-      "Progressed from intern to full-time role",
-      "Independent ownership of frontend and backend features using React.js, Next.js, Laravel, TypeScript",
-      "Working in Agile team with CI/CD workflows and code reviews",
+    overall: "Sep 2025 — Aug 2026",
+    roles: [
+      {
+        title: "Associate Software Engineer",
+        period: "Feb 2026 — Aug 2026",
+        tag: "Promoted",
+        summary:
+          "Promoted from Software Engineering Intern, taking independent ownership of frontend and backend development across production applications.",
+        achievements: [
+          "Owned full-stack features end-to-end across React, Next.js and Laravel codebases",
+          "Built vehicle search and filter flows, listing creation and user dashboard functionality",
+          "Reviewed pull requests and shipped code through CI/CD within an Agile team",
+          "Applied TypeScript and API design patterns in production systems",
+        ],
+      },
+      {
+        title: "Software Engineering Intern",
+        period: "Sep 2025 — Jan 2026",
+        tag: "Internship",
+        summary:
+          "Joined as a software engineering intern and contributed to a production-level vehicle marketplace platform.",
+        achievements: [
+          "Developed frontend components and backend CRUD functionality across React, Next.js, Laravel, Node.js, MongoDB and Firebase",
+          "Worked within an Agile team using GitHub branching, pull requests and CI/CD",
+          "Collaborated with senior developers on requirements-to-solution delivery",
+        ],
+      },
     ],
+    stack: ["React", "Next.js", "TypeScript", "Laravel", "Node.js", "MongoDB", "Firebase"],
+    environment: ["Agile", "GitHub", "PR reviews", "CI/CD"],
+    focus: ["Frontend", "Backend", "Feature ownership", "Collaboration"],
   },
   {
-    company: "IT Starter (Pvt) Ltd",
-    role: "Software Engineering Intern",
-    type: "Internship",
-    duration: "Sep 2025 – Dec 2025",
-    startDate: "2025-09",
-    highlights: [
-      "Full-stack development on production vehicle marketplace platform",
-      "Technologies: Laravel, React.js, Next.js, TypeScript, MongoDB, Firebase",
-      "Collaborated with senior developers, applied Git branching strategies and API design patterns",
+    id: "flowstack",
+    company: "Flowstack",
+    location: "Sri Lanka · Qatar",
+    type: "Founder",
+    overall: "2025 — Present",
+    roles: [
+      {
+        title: "Founder & Lead Developer",
+        period: "2025 — Present",
+        tag: "Founder",
+        summary:
+          "Founded Flowstack to build production websites and digital experiences for businesses across Sri Lanka and Qatar.",
+        achievements: [
+          "Delivered client projects end-to-end — from requirements and UI/UX to development, deployment and SEO",
+          "Served 4 clients across web development and digital services",
+          "Built Flowstack Agency OS, an internal operating system managing clients, projects, content and finances",
+          "Handle client communication directly across the complete lifecycle",
+        ],
+      },
     ],
+    stack: ["React", "Next.js", "Tailwind CSS", "SEO", "Deployment"],
+    environment: ["Client communication", "End-to-end ownership"],
+    focus: ["Requirements", "UI/UX", "Development", "Deployment", "SEO"],
   },
   {
+    id: "gamage",
     company: "Gamage Recruiters",
-    role: "Intern Web Developer",
+    location: "Sri Lanka",
     type: "Internship",
-    duration: "Aug 2024 – Feb 2025",
-    startDate: "2024-08",
-    highlights: [
-      "Built full-stack web application for job seekers and recruiters",
-      "Frontend: React.js UI | Backend: Node.js + Express.js RESTful APIs | Database: MySQL",
-      "Delivered features within Agile sprint cycles",
+    overall: "Aug 2024 — Feb 2025",
+    roles: [
+      {
+        title: "Software Engineering Intern",
+        period: "Aug 2024 — Feb 2025",
+        tag: "Internship",
+        summary:
+          "Built full-stack web solutions for job seekers and recruiters on the MERN stack.",
+        achievements: [
+          "Developed responsive desktop and mobile interfaces with React.js",
+          "Implemented backend features with Node.js, Express.js and MySQL",
+          "Led and managed a sub-team while delivering features within Agile sprints",
+          "Produced system diagrams and worked across testing cycles",
+        ],
+      },
     ],
+    stack: ["React", "Node.js", "Express.js", "MongoDB", "MySQL", "SQL"],
+    environment: ["Agile", "Sub-team leadership"],
+    focus: ["Frontend", "Backend", "Responsive design", "System diagrams"],
   },
 ];

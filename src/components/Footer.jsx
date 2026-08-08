@@ -1,126 +1,68 @@
 import React from "react";
-import { motion } from "framer-motion";
-import { Link as ScrollLink } from "react-scroll";
-import { FiArrowUp } from "react-icons/fi";
+import { FiArrowUp, FiGithub, FiLinkedin } from "react-icons/fi";
+import { site } from "../data/site";
 
 const Footer = () => {
-  const currentYear = new Date().getFullYear();
-
-  const navLinks = [
-    { name: "Home", to: "hero" },
-    { name: "About", to: "about" },
-    { name: "Skills", to: "skills" },
-    { name: "Projects", to: "projects" },
-    { name: "Contact", to: "contact" },
-  ];
+  const year = new Date().getFullYear();
 
   return (
-    <footer className="bg-darkAlt/50 border-t border-slate-700/30 py-12">
-      <div className="container-custom">
-        {/* Main Footer Content */}
-        <div className="grid md:grid-cols-3 gap-8 mb-8">
-          {/* Branding */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-          >
-            <h3 className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent mb-2 font-heading">
+    <footer className="border-t border-line">
+      <div className="container-site py-10">
+        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
+          <div>
+            <p className="font-heading text-lg font-bold text-white">
               Ahlaan Imamdeen
-            </h3>
-            <p className="text-gray-400 text-sm">
-              Full-Stack Developer & Founder of Flowstack
             </p>
-          </motion.div>
+            <p className="text-sm text-secondary mt-1">
+              Full-stack Software Engineer · Founder of Flowstack
+            </p>
+          </div>
 
-          {/* Quick Links */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            viewport={{ once: true }}
-          >
-            <h4 className="text-white font-bold mb-4 font-heading">Quick Links</h4>
-            <div className="space-y-2">
-              {navLinks.map((link) => (
-                <ScrollLink
-                  key={link.to}
-                  to={link.to}
-                  smooth={true}
-                  duration={500}
-                  className="text-gray-400 hover:text-cyan-400 transition-colors cursor-pointer text-sm"
-                >
-                  {link.name}
-                </ScrollLink>
-              ))}
-            </div>
-          </motion.div>
-
-          {/* Connect */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            viewport={{ once: true }}
-          >
-            <h4 className="text-white font-bold mb-4 font-heading">Connect</h4>
-            <div className="space-y-2">
-              <a
-                href="https://github.com/AhlaanMI"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-400 hover:text-cyan-400 transition-colors text-sm"
-              >
-                GitHub
-              </a>
-              <a
-                href="https://linkedin.com/in/ahlaan"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-400 hover:text-cyan-400 transition-colors text-sm"
-              >
-                LinkedIn
-              </a>
-              <a
-                href="https://flowstack.ink"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-400 hover:text-cyan-400 transition-colors text-sm"
-              >
-                Flowstack
-              </a>
-            </div>
-          </motion.div>
+          <div className="flex items-center gap-2">
+            <a
+              href={site.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub"
+              className="p-2.5 rounded-lg border border-line text-secondary hover:text-accent hover:border-accent/40 transition-colors"
+            >
+              <FiGithub />
+            </a>
+            <a
+              href={site.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+              className="p-2.5 rounded-lg border border-line text-secondary hover:text-accent hover:border-accent/40 transition-colors"
+            >
+              <FiLinkedin />
+            </a>
+            <a
+              href={site.flowstack}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-3.5 py-2 rounded-lg border border-line text-secondary hover:text-accent hover:border-accent/40 transition-colors text-sm font-medium"
+            >
+              Flowstack
+            </a>
+            <button
+              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+              aria-label="Back to top"
+              className="p-2.5 rounded-lg border border-line text-secondary hover:text-accent hover:border-accent/40 transition-colors"
+            >
+              <FiArrowUp />
+            </button>
+          </div>
         </div>
 
-        {/* Divider */}
-        <div className="h-px bg-gradient-to-r from-cyan-500/0 via-cyan-500/30 to-cyan-500/0 my-8" />
-
-        {/* Bottom Footer */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="flex flex-col md:flex-row justify-between items-center gap-4"
-        >
-          {/* Copyright */}
-          <p className="text-gray-500 text-sm text-center md:text-left">
-            &copy; {currentYear} Ahlaan Imamdeen. All rights reserved. Designed
-            & built with React, Tailwind CSS & Framer Motion.
+        <div className="mt-8 pt-6 border-t border-line flex flex-col md:flex-row items-start md:items-center justify-between gap-3">
+          <p className="text-xs text-secondary">
+            &copy; {year} Ahlaan Imamdeen. All rights reserved.
           </p>
-
-          {/* Back to Top Button */}
-          <motion.button
-            whileHover={{ y: -3 }}
-            whileTap={{ scale: 0.95 }}
-            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-            className="p-2 rounded-lg bg-gradient-to-r from-cyan-500/20 to-blue-500/20 border border-cyan-500/30 text-cyan-400 hover:border-cyan-500/60 transition-all"
-          >
-            <FiArrowUp className="text-xl" />
-          </motion.button>
-        </motion.div>
+          <p className="text-xs text-secondary">
+            Designed & built by Ahlaan — React, Tailwind CSS & Framer Motion.
+          </p>
+        </div>
       </div>
     </footer>
   );
