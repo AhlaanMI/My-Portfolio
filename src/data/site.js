@@ -35,9 +35,9 @@ export const navLinks = [
 
 export const stats = [
   { value: "2+", label: "Years building web products" },
-  { value: "10+", label: "Full-stack & AI-integrated projects" },
+  { value: "40+", label: "Full-stack & AI-integrated projects" },
   { value: "4", label: "Clients served through Flowstack" },
-  { value: "2", label: "Professional engineering environments" },
+  { value: "3", label: "Professional engineering environments" },
 ];
 
 export const services = [
